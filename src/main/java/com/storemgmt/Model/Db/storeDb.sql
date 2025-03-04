@@ -6,7 +6,7 @@ create table customers
     birthday    date,
     national_id nvarchar2(10) unique,
     phone_num   nvarchar2(11) unique,
-    sex         CHAR(1) CHECK (sex IN ('M', 'F'))
+    sex         char(1) check (sex in ('M', 'F'))
 );
 create sequence customer_seq start with 1 increment by 1;
 
@@ -50,7 +50,15 @@ create table store_branch
 (
     id          numeric primary key,
     branch_name nvarchar2(30),
-    seller_id   numeric not null references sellers (id),
-    product_id  numeric not null references products (id)
+    seller_id   numeric not null references sellers (id)
 );
 create sequence store_branch_seq start with 1 increment by 1;
+
+create table inventory
+(
+    id numeric primary key,
+    product_id numeric not null references products(id),
+    quantity numeric default 0,
+    branch_id numeric not null references store_branch(id)
+);
+create sequence inventory_seq start with 1 increment by 1;
