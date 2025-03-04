@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class DatabaseMaker {
     public static void createDatabase() throws Exception {
-        File file = new File("./src/main/java/mft/library/model/repository/dbsql/militaryLicense.sql");
+        File file = new File("./src/main/java/com/storemgmt/Model/Db/storeDb.sql");
 
         Scanner scanner = new Scanner(file);
         String lines = "";
