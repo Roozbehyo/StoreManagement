@@ -33,6 +33,7 @@ create table orders
 (
     id          numeric primary key,
     customer_id numeric not null references customers (id),
+    seller_id   numeric not null references sellers (id),
     order_date  date
 );
 create sequence order_seq start with 1 increment by 1;
@@ -56,9 +57,9 @@ create sequence store_branch_seq start with 1 increment by 1;
 
 create table inventory
 (
-    id numeric primary key,
-    product_id numeric not null references products(id),
-    quantity numeric default 0,
-    branch_id numeric not null references store_branch(id)
+    id         numeric primary key,
+    product_id numeric not null references products (id),
+    quantity   numeric default 0,
+    branch_id  numeric not null references store_branch (id)
 );
 create sequence inventory_seq start with 1 increment by 1;
