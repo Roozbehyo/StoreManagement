@@ -4,14 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Db file updated add config and layers">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="update db">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/InventoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/Sex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DataCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/QueryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +43,7 @@
       <list>
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -45,10 +66,10 @@
     &quot;accountId&quot;: &quot;10ab2fca-e23b-4eda-92e0-55b77b6a1d21&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -68,54 +89,68 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.MainApp.executor": "Run",
-    "Maven.StoreManagement [clean,test,package].executor": "Run",
-    "Maven.StoreManagement [clean].executor": "Run",
-    "Maven.StoreManagement [compile].executor": "Run",
-    "Maven.StoreManagement [install].executor": "Run",
-    "Maven.StoreManagement [package].executor": "Run",
-    "Maven.StoreManagement [test].executor": "Run",
-    "Maven.StoreManagement [validate].executor": "Run",
-    "Maven.StoreManagement [verify].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/projects/Java/java-se-mesbah/Team Project/src/main/java/mft/library/lib/commons-pool2-2.10.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.45057473",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QueryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,test,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/java-se-mesbah/Team Project/src/main/java/mft/library/lib/commons-pool2-2.10.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45057473&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "Oracle"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;Oracle&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;OracleSqlPlus&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.storemgmt.Model.Entity.Enum" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model\Db" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.storemgmt.Model.Repo" />
+      <recent name="com.storemgmt.Controller" />
+      <recent name="com.storemgmt.Model.Entity" />
       <recent name="com.storemgmt.Model.Db" />
       <recent name="com.storemgmt.Model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn compile" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.QueryTest">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.storemgmt.MainApp" />
       <module name="StoreManagement" />
@@ -129,8 +164,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QueryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QueryTest" />
+      <module name="StoreManagement" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.QueryTest" />
         <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
@@ -155,7 +198,11 @@
       <workItem from="1740986974817" duration="3447000" />
       <workItem from="1741008678881" duration="3055000" />
       <workItem from="1741037930346" duration="2600000" />
-      <workItem from="1741082291745" duration="11052000" />
+      <workItem from="1741082291745" duration="14818000" />
+      <workItem from="1741200662030" duration="2537000" />
+      <workItem from="1741271745489" duration="4660000" />
+      <workItem from="1741331648253" duration="25503000" />
+      <workItem from="1741392793726" duration="4783000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -189,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741102913357</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix problems">
+      <option name="closed" value="true" />
+      <created>1741104399432</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741104399432</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update db">
+      <option name="closed" value="true" />
+      <created>1741278875918</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741278875918</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +273,8 @@
     <MESSAGE value="initialize" />
     <MESSAGE value="Db file added" />
     <MESSAGE value="Db file updated add config and layers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Db file updated add config and layers" />
+    <MESSAGE value="fix problems" />
+    <MESSAGE value="update db" />
+    <option name="LAST_COMMIT_MESSAGE" value="update db" />
   </component>
 </project>
