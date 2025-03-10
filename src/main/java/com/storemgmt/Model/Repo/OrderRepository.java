@@ -4,6 +4,7 @@ import com.storemgmt.Model.ConnectionProvider;
 import com.storemgmt.Model.Entity.Customer;
 import com.storemgmt.Model.Entity.Order;
 import com.storemgmt.Model.Entity.Seller;
+import com.storemgmt.Model.Entity.StoreBranch;
 import lombok.extern.log4j.Log4j;
 
 import java.sql.*;
@@ -25,13 +26,14 @@ public class OrderRepository implements Repository<Order, Integer> {
     public void save(Order order) throws Exception {
         order.setId(ConnectionProvider.getConnectionProvider().nextId("order_seq"));
         preparedStatement = connection.prepareStatement(
-                "INSERT INTO ORDERS (ID, CUSTOMER_ID, SELLER_ID, ORDER_DATE)" +
-                        " VALUES (?,?,?,?)"
+                "INSERT INTO ORDERS (ID, CUSTOMER_ID, SELLER_ID, BRANCH_ID, ORDER_DATE)" +
+                        " VALUES (?,?,?,?,?)"
         );
         preparedStatement.setInt(1, order.getId());
         preparedStatement.setInt(2, order.getCustomer().getId());
         preparedStatement.setInt(3, order.getSeller().getId());
-        preparedStatement.setDate(4, Date.valueOf(order.getOrderDate()));
+        preparedStatement.setInt(4, order.getStoreBranch().getId());
+        preparedStatement.setDate(5, Date.valueOf(order.getOrderDate()));
         preparedStatement.execute();
     }
 
@@ -40,10 +42,12 @@ public class OrderRepository implements Repository<Order, Integer> {
         preparedStatement = connection.prepareStatement(
                 "UPDATE ORDERS " +
                         "SET SELLER_ID=? " +
-                        "WHERE ID=? "
+                        "WHERE ID=? AND BRANCH_ID=? AND ORDER_DATE=?"
         );
         preparedStatement.setInt(1, order.getSeller().getId());
         preparedStatement.setInt(2, order.getId());
+        preparedStatement.setInt(3, order.getStoreBranch().getId());
+        preparedStatement.setDate(4, Date.valueOf(order.getOrderDate()));
         preparedStatement.execute();
     }
 
@@ -54,26 +58,30 @@ public class OrderRepository implements Repository<Order, Integer> {
     @Override
     public List<Order> findAll() throws Exception {
         String sql = "SELECT ORDERS.ID AS ordersId, ORDER_DATE, " +
-                "SELLERS.ID AS sellerId, SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
-                "CUSTOMERS.ID AS customerId, CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName " +
+                "SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
+                "CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName, " +
+                "STORE_BRANCH.BRANCH_NAME " +
                 "FROM ORDERS " +
                 "JOIN SELLERS ON ORDERS.SELLER_ID = SELLERS.ID " +
-                "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID";
+                "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID " +
+                "JOIN STORE_BRANCH ON ORDERS.BRANCH_ID = STORE_BRANCH.ID";
         preparedStatement = connection.prepareStatement(sql);
         resultSet = preparedStatement.executeQuery();
         List<Order> orderList = new ArrayList<>();
         while (resultSet.next()) {
             Seller seller = Seller
                     .builder()
-                    .id(resultSet.getInt("sellerId"))
                     .firstname(resultSet.getString("sellerFName"))
                     .lastname(resultSet.getString("sellerLName"))
                     .build();
             Customer customer = Customer
                     .builder()
-                    .id(resultSet.getInt("customerId"))
                     .firstname(resultSet.getString("customerFName"))
                     .lastname(resultSet.getString("customerLName"))
+                    .build();
+            StoreBranch storeBranch = StoreBranch
+                    .builder()
+                    .branchName(resultSet.getString("branch_name"))
                     .build();
             Order order = Order
                     .builder()
@@ -81,6 +89,7 @@ public class OrderRepository implements Repository<Order, Integer> {
                     .orderDate(resultSet.getDate("order_date").toLocalDate())
                     .customer(customer)
                     .seller(seller)
+                    .storeBranch(storeBranch)
                     .build();
             orderList.add(order);
         }
@@ -90,11 +99,14 @@ public class OrderRepository implements Repository<Order, Integer> {
     @Override
     public Order findById(Integer id) throws Exception {
         String sql = "SELECT ORDERS.ID AS ordersId, ORDER_DATE, " +
-                "SELLERS.ID AS sellerId, SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
-                "CUSTOMERS.ID AS customerId, CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName " +
+                "SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
+                "CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName, " +
+                "STORE_BRANCH.BRANCH_NAME " +
                 "FROM ORDERS " +
                 "JOIN SELLERS ON ORDERS.SELLER_ID = SELLERS.ID " +
-                "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID WHERE ORDERS.ID = ?";
+                "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID " +
+                "JOIN STORE_BRANCH ON ORDERS.BRANCH_ID = STORE_BRANCH.ID " +
+                "WHERE ORDERS.ID = ?";
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1, id);
         resultSet = preparedStatement.executeQuery();
@@ -103,15 +115,17 @@ public class OrderRepository implements Repository<Order, Integer> {
         if (resultSet.next()) {
             Seller seller = Seller
                     .builder()
-                    .id(resultSet.getInt("sellerId"))
                     .firstname(resultSet.getString("sellerFName"))
                     .lastname(resultSet.getString("sellerLName"))
                     .build();
             Customer customer = Customer
                     .builder()
-                    .id(resultSet.getInt("customerId"))
                     .firstname(resultSet.getString("customerFName"))
                     .lastname(resultSet.getString("customerLName"))
+                    .build();
+            StoreBranch storeBranch = StoreBranch
+                    .builder()
+                    .branchName(resultSet.getString("branch_name"))
                     .build();
             order = Order
                     .builder()
@@ -119,9 +133,95 @@ public class OrderRepository implements Repository<Order, Integer> {
                     .orderDate(resultSet.getDate("order_date").toLocalDate())
                     .customer(customer)
                     .seller(seller)
+                    .storeBranch(storeBranch)
                     .build();
         }
         return order;
+    }
+
+    public List<Order> findAllByCustomerFNameAndLName(String firstname, String lastname) throws Exception {
+        String sql = "SELECT ORDERS.ID AS ordersId, ORDER_DATE, " +
+                "SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
+                "CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName, " +
+                "STORE_BRANCH.BRANCH_NAME " +
+                "FROM ORDERS " +
+                "JOIN SELLERS ON ORDERS.SELLER_ID = SELLERS.ID " +
+                "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID " +
+                "JOIN STORE_BRANCH ON ORDERS.BRANCH_ID = STORE_BRANCH.ID " +
+                "WHERE CUSTOMERS.FIRSTNAME LIKE ? AND CUSTOMERS.LASTNAME LIKE ?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, firstname + "%");
+        preparedStatement.setString(2, lastname + "%");
+        List<Order> orderList = new ArrayList<>();
+        while (resultSet.next()) {
+            Seller seller = Seller
+                    .builder()
+                    .firstname(resultSet.getString("sellerFName"))
+                    .lastname(resultSet.getString("sellerLName"))
+                    .build();
+            Customer customer = Customer
+                    .builder()
+                    .firstname(resultSet.getString("customerFName"))
+                    .lastname(resultSet.getString("customerLName"))
+                    .build();
+            StoreBranch storeBranch = StoreBranch
+                    .builder()
+                    .branchName(resultSet.getString("branch_name"))
+                    .build();
+            Order order = Order
+                    .builder()
+                    .id(resultSet.getInt("ordersId"))
+                    .orderDate(resultSet.getDate("order_date").toLocalDate())
+                    .customer(customer)
+                    .seller(seller)
+                    .storeBranch(storeBranch)
+                    .build();
+            orderList.add(order);
+        }
+        return orderList;
+    }
+
+    public List<Order> findAllBySellerFNameAndLName(String firstname, String lastname) throws Exception {
+        String sql = "SELECT ORDERS.ID AS ordersId, ORDER_DATE, " +
+                "SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
+                "CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName, " +
+                "STORE_BRANCH.BRANCH_NAME " +
+                "FROM ORDERS " +
+                "JOIN SELLERS ON ORDERS.SELLER_ID = SELLERS.ID " +
+                "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID " +
+                "JOIN STORE_BRANCH ON ORDERS.BRANCH_ID = STORE_BRANCH.ID " +
+                "WHERE SELLERS.FIRSTNAME LIKE ? AND SELLERS.LASTNAME LIKE ?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, firstname + "%");
+        preparedStatement.setString(2, lastname + "%");
+        resultSet = preparedStatement.executeQuery();
+        List<Order> orderList = new ArrayList<>();
+        while (resultSet.next()) {
+            Seller seller = Seller
+                    .builder()
+                    .firstname(resultSet.getString("sellerFName"))
+                    .lastname(resultSet.getString("sellerLName"))
+                    .build();
+            Customer customer = Customer
+                    .builder()
+                    .firstname(resultSet.getString("customerFName"))
+                    .lastname(resultSet.getString("customerLName"))
+                    .build();
+            StoreBranch storeBranch = StoreBranch
+                    .builder()
+                    .branchName(resultSet.getString("branch_name"))
+                    .build();
+            Order order = Order
+                    .builder()
+                    .id(resultSet.getInt("ordersId"))
+                    .orderDate(resultSet.getDate("order_date").toLocalDate())
+                    .customer(customer)
+                    .seller(seller)
+                    .storeBranch(storeBranch)
+                    .build();
+            orderList.add(order);
+        }
+        return orderList;
     }
 
     @Override

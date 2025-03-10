@@ -2,7 +2,6 @@ package com.storemgmt.Model.Repo;
 
 import com.storemgmt.Model.ConnectionProvider;
 import com.storemgmt.Model.Entity.StoreBranch;
-import com.storemgmt.Model.Entity.Seller;
 import lombok.extern.log4j.Log4j;
 
 import java.sql.Connection;
@@ -26,12 +25,11 @@ public class StoreBranchRepository implements Repository<StoreBranch, Integer> {
     public void save(StoreBranch storeBranch) throws Exception {
         storeBranch.setId(ConnectionProvider.getConnectionProvider().nextId("store_branch_seq"));
         preparedStatement = connection.prepareStatement(
-                "INSERT INTO STORE_BRANCH(ID, BRANCH_NAME, SELLER_ID)" +
-                        " VALUES (?,?,?)"
+                "INSERT INTO STORE_BRANCH(ID, BRANCH_NAME)" +
+                        " VALUES (?,?)"
         );
         preparedStatement.setInt(1, storeBranch.getId());
         preparedStatement.setString(2, storeBranch.getBranchName());
-        preparedStatement.setInt(3, storeBranch.getSeller().getId());
         preparedStatement.execute();
     }
 
@@ -39,12 +37,11 @@ public class StoreBranchRepository implements Repository<StoreBranch, Integer> {
     public void edit(StoreBranch storeBranch) throws Exception {
         preparedStatement = connection.prepareStatement(
                 "UPDATE STORE_BRANCH " +
-                        "SET BRANCH_NAME=?, SELLER_ID=? " +
+                        "SET BRANCH_NAME=? " +
                         "WHERE ID=? "
         );
         preparedStatement.setString(1, storeBranch.getBranchName());
-        preparedStatement.setInt(2, storeBranch.getSeller().getId());
-        preparedStatement.setInt(3, storeBranch.getId());
+        preparedStatement.setInt(2, storeBranch.getId());
         preparedStatement.execute();
     }
 
@@ -61,27 +58,17 @@ public class StoreBranchRepository implements Repository<StoreBranch, Integer> {
 
     @Override
     public List<StoreBranch> findAll() throws Exception {
-        String sql = "SELECT STORE_BRANCH.ID AS storeBranchId, BRANCH_NAME, " +
-                "SELLERS.ID AS sellerId, SELLERS.FIRSTNAME AS sellerFName, " +
-                "SELLERS.LASTNAME AS sellerLName " +
+        String sql = "SELECT STORE_BRANCH.ID, BRANCH_NAME " +
                 "FROM STORE_BRANCH " +
-                "JOIN SELLERS ON STORE_BRANCH.SELLER_ID = SELLERS.ID " +
                 "WHERE STORE_BRANCH.IS_DELETED=0";
         preparedStatement = connection.prepareStatement(sql);
         resultSet = preparedStatement.executeQuery();
         List<StoreBranch> storeBranchList = new ArrayList<>();
         while (resultSet.next()) {
-            Seller seller = Seller
-                    .builder()
-                    .id(resultSet.getInt("sellersId"))
-                    .firstname(resultSet.getString("sellerFName"))
-                    .lastname(resultSet.getString("sellerLName"))
-                    .build();
             StoreBranch storeBranch = StoreBranch
                     .builder()
-                    .id(resultSet.getInt("storeBranchId"))
+                    .id(resultSet.getInt("id"))
                     .branchName(resultSet.getString("branch_name"))
-                    .seller(seller)
                     .build();
             storeBranchList.add(storeBranch);
         }
@@ -90,11 +77,8 @@ public class StoreBranchRepository implements Repository<StoreBranch, Integer> {
 
     @Override
     public StoreBranch findById(Integer id) throws Exception {
-        String sql = "SELECT STORE_BRANCH.ID AS storeBranchId, BRANCH_NAME, " +
-                "SELLERS.ID AS sellerId, SELLERS.FIRSTNAME AS sellerFName, " +
-                "SELLERS.LASTNAME AS sellerLName " +
+        String sql = "SELECT STORE_BRANCH.ID, BRANCH_NAME " +
                 "FROM STORE_BRANCH " +
-                "JOIN SELLERS ON STORE_BRANCH.SELLER_ID = SELLERS.ID " +
                 "WHERE STORE_BRANCH.IS_DELETED=0 AND STORE_BRANCH.ID = ?";
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1, id);
@@ -102,20 +86,32 @@ public class StoreBranchRepository implements Repository<StoreBranch, Integer> {
 
         StoreBranch storeBranch = null;
         if (resultSet.next()) {
-            Seller seller = Seller
-                    .builder()
-                    .id(resultSet.getInt("sellersId"))
-                    .firstname(resultSet.getString("sellerFName"))
-                    .lastname(resultSet.getString("sellerLName"))
-                    .build();
             storeBranch = StoreBranch
                     .builder()
-                    .id(resultSet.getInt("storeBranchId"))
+                    .id(resultSet.getInt("id"))
                     .branchName(resultSet.getString("branch_name"))
-                    .seller(seller)
                     .build();
         }
         return storeBranch;
+    }
+
+    public List<StoreBranch> findByName(String name) throws Exception {
+        String sql = "SELECT STORE_BRANCH.ID, BRANCH_NAME " +
+                "FROM STORE_BRANCH " +
+                "WHERE STORE_BRANCH.IS_DELETED=0 AND BRANCH_NAME LIKE ?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, name + "%");
+        resultSet = preparedStatement.executeQuery();
+        List<StoreBranch> storeBranchList = new ArrayList<>();
+        while (resultSet.next()) {
+            StoreBranch storeBranch = StoreBranch
+                    .builder()
+                    .id(resultSet.getInt("id"))
+                    .branchName(resultSet.getString("branch_name"))
+                    .build();
+            storeBranchList.add(storeBranch);
+        }
+        return storeBranchList;
     }
 
     @Override

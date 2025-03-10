@@ -98,6 +98,61 @@ public class SellerRepository implements Repository<Seller, Integer> {
         return seller;
     }
 
+    public Integer findIdByUsername(String username) throws Exception {
+        preparedStatement = connection.prepareStatement(
+                "SELECT ID FROM SELLERS WHERE USERNAME=?"
+        );
+        preparedStatement.setString(1, username);
+        resultSet = preparedStatement.executeQuery();
+        return (resultSet.next()) ? resultSet.getInt("id") : null;
+    }
+
+
+    public List<Seller> findAllByFNameAndLName(String firstname, String lastname) throws Exception {
+        preparedStatement = connection.prepareStatement(
+                "SELECT * FROM SELLERS WHERE FIRSTNAME LIKE ? AND LASTNAME LIKE ? ORDER BY LASTNAME, FIRSTNAME"
+        );
+        preparedStatement.setString(1, firstname + "%");
+        preparedStatement.setString(2, lastname + "%");
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        List<Seller> sellerList = new ArrayList<>();
+        while (resultSet.next()) {
+            Seller seller = Seller
+                    .builder()
+                    .id(resultSet.getInt("id"))
+                    .firstname(resultSet.getString("firstname"))
+                    .lastname(resultSet.getString("lastname"))
+                    .username(resultSet.getString("username"))
+                    .password(resultSet.getString("password"))
+                    .build();
+            sellerList.add(seller);
+        }
+        return sellerList;
+    }
+
+    public Seller findByUsernameAndPassword(String username, String password) throws Exception {
+        preparedStatement = connection.prepareStatement(
+                "SELECT * FROM SELLERS WHERE USERNAME=? AND PASSWORD=?"
+        );
+        preparedStatement.setString(1, username);
+        preparedStatement.setString(2, password);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        Seller seller = null;
+        if (resultSet.next()) {
+            seller = Seller
+                    .builder()
+                    .id(resultSet.getInt("id"))
+                    .firstname(resultSet.getString("firstname"))
+                    .lastname(resultSet.getString("lastname"))
+                    .username(resultSet.getString("username"))
+                    .password(resultSet.getString("password"))
+                    .build();
+        }
+        return seller;
+    }
+
     @Override
     public void close() throws Exception {
         preparedStatement.close();

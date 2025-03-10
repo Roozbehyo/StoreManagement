@@ -4,34 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="update db">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/InventoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/Sex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DataCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/QueryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Db , enum , entity , repo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/BranchSeller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/BranchSellerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/InventoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/SellerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/StoreBranchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/Service.java" afterDir="false" />
+    </list>
+    <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -131,6 +130,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.storemgmt.Model.Service" />
       <recent name="com.storemgmt.Model.Entity.Enum" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -138,11 +138,11 @@
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.storemgmt.Model.Service" />
       <recent name="com.storemgmt.Model.Repo" />
-      <recent name="com.storemgmt.Controller" />
       <recent name="com.storemgmt.Model.Entity" />
+      <recent name="com.storemgmt.Controller" />
       <recent name="com.storemgmt.Model.Db" />
-      <recent name="com.storemgmt.Model" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -190,6 +190,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="" />
+      <changelist id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="" />
       <created>1740961424738</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -202,7 +203,11 @@
       <workItem from="1741200662030" duration="2537000" />
       <workItem from="1741271745489" duration="4660000" />
       <workItem from="1741331648253" duration="25503000" />
-      <workItem from="1741392793726" duration="4783000" />
+      <workItem from="1741392793726" duration="9233000" />
+      <workItem from="1741468974652" duration="382000" />
+      <workItem from="1741515237166" duration="412000" />
+      <workItem from="1741535668244" duration="962000" />
+      <workItem from="1741605776677" duration="38739000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -252,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741278875918</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Db , enum , entity , repo">
+      <option name="closed" value="true" />
+      <created>1741423993054</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741423993054</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +288,7 @@
     <MESSAGE value="Db file updated add config and layers" />
     <MESSAGE value="fix problems" />
     <MESSAGE value="update db" />
-    <option name="LAST_COMMIT_MESSAGE" value="update db" />
+    <MESSAGE value="Db , enum , entity , repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Db , enum , entity , repo" />
   </component>
 </project>

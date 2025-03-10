@@ -3,13 +3,13 @@ package com.storemgmt.Model.Service;
 import java.util.List;
 
 public interface Service<T, I> {
-    void save(T t);
+    void save(T t) throws Exception;
 
-    void update(T t);
+    void edit(T t) throws Exception;
 
-    void delete(I id);
+    void remove(I id) throws Exception;
 
-    List<T> findAll();
+    List<T> findAll() throws Exception;
 
-    T findById(I id);
+    T findById(I id) throws Exception;
 }

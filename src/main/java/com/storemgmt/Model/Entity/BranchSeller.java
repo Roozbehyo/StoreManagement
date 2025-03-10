@@ -5,16 +5,12 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDate;
-
 @Setter
 @Getter
 @ToString
 @SuperBuilder(toBuilder = true)
-public class Order {
+public class BranchSeller {
     private int id;
-    private LocalDate orderDate;
-    private Customer customer;
-    private Seller seller;
     private StoreBranch storeBranch;
+    private Seller seller;
 }

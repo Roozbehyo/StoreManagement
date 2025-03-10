@@ -40,15 +40,6 @@ public class OrderItemRepository implements Repository<OrderItem, Integer> {
 
     @Override
     public void edit(OrderItem orderItem) throws Exception {
-        preparedStatement = connection.prepareStatement(
-                "UPDATE ORDER_ITEMS " +
-                        "SET PRODUCT_ID=?, QUANTITY=? " +
-                        "WHERE ID=? "
-        );
-        preparedStatement.setInt(1, orderItem.getProduct().getId());
-        preparedStatement.setInt(2, orderItem.getQuantity());
-        preparedStatement.setInt(3, orderItem.getId());
-        preparedStatement.execute();
     }
 
     @Override

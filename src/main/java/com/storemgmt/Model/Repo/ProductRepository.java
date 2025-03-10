@@ -39,7 +39,7 @@ public class ProductRepository implements Repository<Product, Integer> {
         preparedStatement = connection.prepareStatement(
                 "UPDATE PRODUCTS " +
                         "SET NAME=?, PRICE=? " +
-                        "WHERE ID=? "
+                        "WHERE ID=? AND IS_DELETED =0"
         );
         preparedStatement.setString(1, product.getName());
         preparedStatement.setFloat(2, product.getPrice());
@@ -95,6 +95,26 @@ public class ProductRepository implements Repository<Product, Integer> {
                     .build();
         }
         return product;
+    }
+
+    public List<Product> findAllByName(String name) throws Exception {
+        preparedStatement = connection.prepareStatement(
+                "SELECT * FROM PRODUCTS WHERE NAME LIKE ? AND IS_DELETED =0 ORDER BY NAME"
+        );
+        preparedStatement.setString(1, name + "%");
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        List<Product> productList = new ArrayList<>();
+        while (resultSet.next()) {
+            Product product = Product
+                    .builder()
+                    .id(resultSet.getInt("id"))
+                    .name(resultSet.getString("name"))
+                    .price(resultSet.getFloat("price"))
+                    .build();
+            productList.add(product);
+        }
+        return productList;
     }
 
     @Override
