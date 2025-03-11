@@ -4,29 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Db , enum , entity , repo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/BranchSeller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/BranchSellerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/InventoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/SellerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/StoreBranchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Service Layer, Update Repositories, Edit Db, BranchSeller added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/OrderItemValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/OrderValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/ProductValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/SellerValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" afterDir="false" />
     </list>
     <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
@@ -138,11 +122,11 @@
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.storemgmt.Model.Validation" />
       <recent name="com.storemgmt.Model.Service" />
       <recent name="com.storemgmt.Model.Repo" />
       <recent name="com.storemgmt.Model.Entity" />
       <recent name="com.storemgmt.Controller" />
-      <recent name="com.storemgmt.Model.Db" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -207,7 +191,8 @@
       <workItem from="1741468974652" duration="382000" />
       <workItem from="1741515237166" duration="412000" />
       <workItem from="1741535668244" duration="962000" />
-      <workItem from="1741605776677" duration="38739000" />
+      <workItem from="1741605776677" duration="39234000" />
+      <workItem from="1741675101358" duration="13443000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -265,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741423993054</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Service Layer, Update Repositories, Edit Db, BranchSeller added">
+      <option name="closed" value="true" />
+      <created>1741650152163</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741650152163</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +282,7 @@
     <MESSAGE value="fix problems" />
     <MESSAGE value="update db" />
     <MESSAGE value="Db , enum , entity , repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Db , enum , entity , repo" />
+    <MESSAGE value="Service Layer, Update Repositories, Edit Db, BranchSeller added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Service Layer, Update Repositories, Edit Db, BranchSeller added" />
   </component>
 </project>
