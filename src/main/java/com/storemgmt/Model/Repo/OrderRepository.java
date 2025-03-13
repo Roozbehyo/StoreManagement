@@ -1,6 +1,6 @@
 package com.storemgmt.Model.Repo;
 
-import com.storemgmt.Model.ConnectionProvider;
+import com.storemgmt.Model.Db.ConnectionProvider;
 import com.storemgmt.Model.Entity.Customer;
 import com.storemgmt.Model.Entity.Order;
 import com.storemgmt.Model.Entity.Seller;

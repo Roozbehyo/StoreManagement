@@ -1,9 +1,8 @@
 package com.storemgmt.Model.Repo;
 
-import com.storemgmt.Model.ConnectionProvider;
+import com.storemgmt.Model.Db.ConnectionProvider;
 import com.storemgmt.Model.Entity.Customer;
 import com.storemgmt.Model.Entity.Enum.Sex;
-import com.storemgmt.Model.Entity.Seller;
 import lombok.extern.log4j.Log4j;
 
 import java.sql.Connection;

@@ -11,9 +11,9 @@ public class MainApp extends Application {
         @Override
         public void start(Stage primaryStage) throws Exception {
             log.info("Starting Application");
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/temps/mainView.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/temps/loginView.fxml")));
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Home");
+            primaryStage.setTitle("Login");
             primaryStage.show();
         }
 }

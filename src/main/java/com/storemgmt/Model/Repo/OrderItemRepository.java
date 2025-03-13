@@ -1,13 +1,12 @@
 package com.storemgmt.Model.Repo;
 
-import com.storemgmt.Model.ConnectionProvider;
+import com.storemgmt.Model.Db.ConnectionProvider;
 import com.storemgmt.Model.Entity.Order;
 import com.storemgmt.Model.Entity.OrderItem;
 import com.storemgmt.Model.Entity.Product;
 import lombok.extern.log4j.Log4j;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;

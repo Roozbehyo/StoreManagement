@@ -1,4 +1,4 @@
-package com.storemgmt.Model;
+package com.storemgmt.Model.Db;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 

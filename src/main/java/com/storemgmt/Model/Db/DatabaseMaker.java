@@ -1,7 +1,5 @@
 package com.storemgmt.Model.Db;
 
-import com.storemgmt.Model.ConnectionProvider;
-
 import java.io.File;
 import java.util.Scanner;
 

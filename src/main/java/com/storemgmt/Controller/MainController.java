@@ -1,13 +1,157 @@
 package com.storemgmt.Controller;
 
+import com.storemgmt.Model.Entity.Enum.FormState;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    private MenuItem newSellerMnu, editSellerMnu;
+    @FXML
+    private MenuItem newCustomerMnu, editCustomerMnu, removeCustomerMnu;
+    @FXML
+    private MenuItem newProductMnu, editProductMnu, removeProductMnu;
+    @FXML
+    private MenuItem newOrderMnu, editOrderMnu;
+    @FXML
+    private MenuItem newInventoryMnu, editInventoryMnu, removeInventoryMnu;
+    @FXML
+    private MenuItem newBranchMnu, editBranchMnu, removeBranchMnu;
+    @FXML
+    private Label welcomeLabel;
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        welcomeLabel.setText("Welcome " + FormViewer.loggedInSeller.getFirstname()
+                .concat(" " + FormViewer.loggedInSeller.getLastname()));
+        newSellerMnu.setOnAction(e -> {
+            FormViewer.sellerFormState = FormState.New;
+            showSellerForm();
+        });
+        editSellerMnu.setOnAction(e -> {
+            FormViewer.sellerFormState = FormState.Update;
+            showSellerForm();
+        });
+
+        newCustomerMnu.setOnAction(e -> {
+            FormViewer.customerFormState = FormState.New;
+            showCustomerForm();
+        });
+        editCustomerMnu.setOnAction(e -> {
+            FormViewer.customerFormState = FormState.Update;
+            showCustomerForm();
+        });
+        removeCustomerMnu.setOnAction(e -> {
+            FormViewer.customerFormState = FormState.Remove;
+            showCustomerForm();
+        });
+
+        newProductMnu.setOnAction(e -> {
+            FormViewer.productFormState = FormState.New;
+            showProductForm();
+        });
+        editProductMnu.setOnAction(e -> {
+            FormViewer.productFormState = FormState.Update;
+            showProductForm();
+        });
+        removeProductMnu.setOnAction(e -> {
+            FormViewer.productFormState = FormState.Remove;
+            showProductForm();
+        });
+
+        newOrderMnu.setOnAction(e -> {
+            FormViewer.orderFormState = FormState.New;
+            showOrderForm();
+        });
+        editOrderMnu.setOnAction(e -> {
+            FormViewer.orderFormState = FormState.Update;
+            showOrderForm();
+        });
+
+        newInventoryMnu.setOnAction(e -> {
+            FormViewer.inventoryFormState = FormState.New;
+            showInventoryForm();
+        });
+        editInventoryMnu.setOnAction(e -> {
+            FormViewer.inventoryFormState = FormState.Update;
+            showInventoryForm();
+        });
+        removeInventoryMnu.setOnAction(e -> {
+            FormViewer.inventoryFormState = FormState.Remove;
+            showInventoryForm();
+        });
+
+        newBranchMnu.setOnAction(e -> {
+            FormViewer.branchFormState = FormState.New;
+            showBranchForm();
+        });
+        editBranchMnu.setOnAction(e -> {
+            FormViewer.branchFormState = FormState.Update;
+            showBranchForm();
+        });
+        removeBranchMnu.setOnAction(e -> {
+            FormViewer.branchFormState = FormState.Remove;
+            showBranchForm();
+        });
+    }
+
+    public void showSellerForm() {
+        try {
+            FormViewer formViewer = new FormViewer();
+            formViewer.showForm("Seller", "Seller Information");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void showCustomerForm() {
+        try {
+            FormViewer formViewer = new FormViewer();
+            formViewer.showForm("Customer", "Customer Information");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void showProductForm() {
+        try {
+            FormViewer formViewer = new FormViewer();
+            formViewer.showForm("Product", "Product Information");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void showOrderForm() {
+        try {
+            FormViewer formViewer = new FormViewer();
+            formViewer.showForm("Order", "Order Information");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void showInventoryForm() {
+        try {
+            FormViewer formViewer = new FormViewer();
+            formViewer.showForm("Inventory", "Inventory Information");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void showBranchForm() {
+        try {
+            FormViewer formViewer = new FormViewer();
+            formViewer.showForm("Branch", "Branch Information");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

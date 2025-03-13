@@ -4,13 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Service Layer, Update Repositories, Edit Db, BranchSeller added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/OrderItemValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/OrderValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/ProductValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/SellerValidator.java" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Validations Updated">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/FormState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/customerView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/sellerView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/ConnectionProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/QueryTest.java" beforeDir="false" />
+    </list>
+    <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/PersonModalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/personModalView.fxml" afterDir="false" />
     </list>
     <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
@@ -89,13 +111,13 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/java-se-mesbah/Team Project/src/main/java/mft/library/lib/commons-pool2-2.10.0.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/Store-Management/StoreManagement/src/main/resources/temps&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.45057473&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -117,16 +139,22 @@
       <recent name="com.storemgmt.Model.Service" />
       <recent name="com.storemgmt.Model.Entity.Enum" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources\temps" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Controller" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model\Db" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.storemgmt.Controller" />
+      <recent name="com.storemgmt.Model.Entity.Enum" />
       <recent name="com.storemgmt.Model.Validation" />
       <recent name="com.storemgmt.Model.Service" />
       <recent name="com.storemgmt.Model.Repo" />
-      <recent name="com.storemgmt.Model.Entity" />
-      <recent name="com.storemgmt.Controller" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -134,7 +162,7 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.QueryTest">
+  <component name="RunManager" selected="Application.MainApp">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.storemgmt.MainApp" />
       <module name="StoreManagement" />
@@ -157,8 +185,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.QueryTest" />
         <item itemvalue="Application.MainApp" />
+        <item itemvalue="Application.QueryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -175,6 +203,7 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="" />
       <changelist id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="" />
+      <changelist id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="Dont" comment="" />
       <created>1740961424738</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -192,7 +221,10 @@
       <workItem from="1741515237166" duration="412000" />
       <workItem from="1741535668244" duration="962000" />
       <workItem from="1741605776677" duration="39234000" />
-      <workItem from="1741675101358" duration="13443000" />
+      <workItem from="1741675101358" duration="15403000" />
+      <workItem from="1741717847253" duration="9149000" />
+      <workItem from="1741808200931" duration="2499000" />
+      <workItem from="1741851070211" duration="26916000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -258,7 +290,31 @@
       <option name="project" value="LOCAL" />
       <updated>1741650152163</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Validation Layer">
+      <option name="closed" value="true" />
+      <created>1741698175891</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741698175891</updated>
+    </task>
+    <task id="LOCAL-00010" summary="InventoryRepository and InventoryService updated">
+      <option name="closed" value="true" />
+      <created>1741857650262</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741857650262</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Validations Updated">
+      <option name="closed" value="true" />
+      <created>1741884883120</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741884883120</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +339,9 @@
     <MESSAGE value="update db" />
     <MESSAGE value="Db , enum , entity , repo" />
     <MESSAGE value="Service Layer, Update Repositories, Edit Db, BranchSeller added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Service Layer, Update Repositories, Edit Db, BranchSeller added" />
+    <MESSAGE value="Validation Layer" />
+    <MESSAGE value="InventoryRepository and InventoryService updated" />
+    <MESSAGE value="Validations Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validations Updated" />
   </component>
 </project>
