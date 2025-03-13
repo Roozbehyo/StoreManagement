@@ -24,7 +24,28 @@ public class InventoryService implements Service<Inventory, Integer> {
     }
 
     @Override
-    public void remove(Integer id) throws Exception {
+    public void remove(Integer branchId) throws Exception {
+        StoreBranch storeBranch = new StoreBranchService().findById(branchId);
+        if (storeBranch == null) {
+            throw new Exception("Store branch not found");
+        }
+        try (InventoryRepository inventoryRepository = new InventoryRepository()) {
+            inventoryRepository.remove(branchId);
+        }
+    }
+
+    public void remove(int branchId, int productId) throws Exception {
+        StoreBranch storeBranch = new StoreBranchService().findById(branchId);
+        if (storeBranch == null) {
+            throw new Exception("Store branch not found");
+        }
+        Product product = new ProductService().findById(productId);
+        if (product == null) {
+            throw new Exception("Product Not Found");
+        }
+        try (InventoryRepository inventoryRepository = new InventoryRepository()) {
+            inventoryRepository.remove(branchId, productId);
+        }
     }
 
     @Override
@@ -111,7 +132,7 @@ public class InventoryService implements Service<Inventory, Integer> {
         }
         try (InventoryRepository inventoryRepository = new InventoryRepository()) {
             int minus = inventory.getQuantity() - orderItem.getQuantity();
-            inventoryRepository.calcBalance(minus,inventory);
+            inventoryRepository.calcBalance(minus, inventory);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.storemgmt.Model.Repo;
 
-import com.storemgmt.Model.ConnectionProvider;
+import com.storemgmt.Model.Db.ConnectionProvider;
 import com.storemgmt.Model.Entity.Inventory;
 import com.storemgmt.Model.Entity.Product;
 import com.storemgmt.Model.Entity.StoreBranch;
@@ -9,7 +9,6 @@ import lombok.extern.log4j.Log4j;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +52,23 @@ public class InventoryRepository implements Repository<Inventory, Integer> {
     }
 
     @Override
-    public void remove(Integer id) throws Exception {
+    public void remove(Integer branchId) throws Exception {
+        preparedStatement = connection.prepareStatement(
+                "DELETE FROM INVENTORY " +
+                        "WHERE BRANCH_ID =?"
+        );
+        preparedStatement.setInt(1, branchId);
+        preparedStatement.execute();
+    }
+
+    public void remove(int branchId, int productId) throws Exception {
+        preparedStatement = connection.prepareStatement(
+                "DELETE FROM INVENTORY " +
+                        "WHERE BRANCH_ID =? AND PRODUCT_ID=?"
+        );
+        preparedStatement.setInt(1, branchId);
+        preparedStatement.setInt(2, productId);
+        preparedStatement.execute();
     }
 
     @Override
