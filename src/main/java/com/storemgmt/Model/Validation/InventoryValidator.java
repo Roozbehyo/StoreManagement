@@ -4,15 +4,12 @@ import com.storemgmt.Model.Entity.Inventory;
 
 public class InventoryValidator {
 
-    public boolean validateInventory(Inventory inventory) {
-        boolean isValid = true;
-
+    public void validateInventory(Inventory inventory) throws Exception{
         if (inventory.getStoreBranch().getId() == 0) {
-            isValid = false;
+            throw new Exception("Store Branch Id is required");
         }
         if (inventory.getProduct().getId() == 0) {
-            isValid = false;
+            throw new Exception("Product Id is required");
         }
-        return isValid;
     }
 }

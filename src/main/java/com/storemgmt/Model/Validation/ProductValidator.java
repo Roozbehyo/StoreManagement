@@ -4,16 +4,13 @@ import com.storemgmt.Model.Entity.Product;
 
 public class ProductValidator {
 
-    public boolean validateProduct(Product product) {
-        boolean isValid = true;
-
+    public void validateProduct(Product product) throws Exception {
         if (!nameValidator(product.getName())) {
-            isValid = false;
+            throw new Exception("Invalid product name");
         }
         if (!priceValidator(String.valueOf(product.getPrice()))) {
-            isValid = false;
+            throw new Exception("Invalid product price");
         }
-        return isValid;
     }
 
     public static boolean nameValidator(String name) {

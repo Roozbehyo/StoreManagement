@@ -4,22 +4,19 @@ import com.storemgmt.Model.Entity.Seller;
 
 public class SellerValidator {
 
-    public boolean validateSeller(Seller seller) {
-        boolean isValid = true;
-
+    public void validateSeller(Seller seller) throws Exception {
         if (!nameValidator(seller.getFirstname())) {
-            isValid = false;
+            throw new Exception("Invalid First Name ");
         }
         if (!nameValidator(seller.getLastname())) {
-            isValid = false;
+            throw new Exception("Invalid Last Name ");
         }
         if (!usernameValidator(seller.getUsername())) {
-            isValid = false;
+            throw new Exception("Invalid Username ");
         }
         if (!passwordValidator(seller.getPassword())) {
-            isValid = false;
+            throw new Exception("Invalid Password ");
         }
-        return isValid;
     }
 
     public static boolean nameValidator(String name) {

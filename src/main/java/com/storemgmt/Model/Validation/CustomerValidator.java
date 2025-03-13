@@ -4,29 +4,25 @@ import com.storemgmt.Model.Entity.Customer;
 
 public class CustomerValidator {
 
-    public boolean validateCustomer(Customer customer) {
-        boolean isValid = true;
-
+    public void validateCustomer(Customer customer) throws Exception {
         if (!nameValidator(customer.getFirstname())) {
-            isValid = false;
+            throw new Exception("Invalid First Name ");
         }
         if (!nameValidator(customer.getLastname())) {
-            isValid = false;
+            throw new Exception("Invalid Last Name ");
         }
         if (!birthdateValidator(String.valueOf(customer.getBirthdate()))) {
-            isValid = false;
+            throw new Exception("Invalid Birth Date ");
         }
         if (!sexValidator(String.valueOf(customer.getSex()))) {
-            isValid = false;
+            throw new Exception("Invalid Sex Option ");
         }
         if (!nationalIdValidator(customer.getNationalId())) {
-            isValid = false;
+            throw new Exception("Invalid National Id ");
         }
         if (!phoneValidator(customer.getPhoneNumber())) {
-            isValid = false;
+            throw new Exception("Invalid Phone Number ");
         }
-
-        return isValid;
     }
 
     public static boolean nameValidator(String name) {
