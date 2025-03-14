@@ -64,15 +64,25 @@ public class OrderController implements Initializable {
 
         addCustomerBtn.setOnAction(event -> {
             try {
-                formViewer.showForm("customerModal", "Customer");
-                CustomerModalController customerModalController = new CustomerModalController();
-                customerModalController.loadCustomerData();
+                formViewer.showForm("storeBranchModal", "Store Branch");
+                BranchModalController branchModalController = new BranchModalController();
+                branchModalController.loadBranchData();
             } catch (Exception e) {
                 log.error(e);
             }
         });
 
         addSellerBtn.setOnAction(event -> {
+            try {
+                formViewer.showForm("sellerModal", "Seller");
+                SellerModalController sellerModalController = new SellerModalController();
+                sellerModalController.loadSellerData();
+            } catch (Exception e) {
+                log.error(e);
+            }
+        });
+
+        addBranchBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("sellerModal", "Seller");
                 SellerModalController sellerModalController = new SellerModalController();
