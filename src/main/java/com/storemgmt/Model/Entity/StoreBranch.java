@@ -12,5 +12,4 @@ import lombok.experimental.SuperBuilder;
 public class StoreBranch {
     private int id;
     private String branchName;
-    private Seller seller;
 }

@@ -47,6 +47,16 @@ public class OrderItemService implements Service<OrderItem, Integer> {
         }
     }
 
+    public List<OrderItem> findAll(int orderId) throws Exception {
+        try (OrderItemRepository orderItemRepository = new OrderItemRepository()) {
+            List<OrderItem> orderItemList = orderItemRepository.findAll(orderId);
+            if (orderItemList.isEmpty()) {
+                throw new Exception("No Items Found");
+            }
+            return orderItemList;
+        }
+    }
+
     @Override
     public OrderItem findById(Integer id) throws Exception {
         try (OrderItemRepository orderItemRepository = new OrderItemRepository()) {

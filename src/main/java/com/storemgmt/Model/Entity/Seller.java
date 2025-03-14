@@ -1,12 +1,9 @@
 package com.storemgmt.Model.Entity;
 
-import com.storemgmt.Model.Entity.Enum.Sex;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-
-import java.time.LocalDate;
 
 @Setter
 @Getter

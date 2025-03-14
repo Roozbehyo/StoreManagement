@@ -79,6 +79,40 @@ public class OrderItemRepository implements Repository<OrderItem, Integer> {
         return orderItemList;
     }
 
+    public List<OrderItem> findAll(int orderId) throws Exception {
+        String sql = "SELECT ORDER_ITEMS.ID AS orderItemsId, QUANTITY, " +
+                "ORDERS.ID AS ordersId, " +
+                "PRODUCTS.ID AS productsId, PRODUCTS.NAME AS productName, PRODUCTS.PRICE " +
+                "FROM ORDER_ITEMS " +
+                "JOIN ORDERS ON ORDER_ITEMS.ORDER_ID = ORDERS.ID " +
+                "JOIN PRODUCTS ON ORDER_ITEMS.PRODUCT_ID = PRODUCTS.ID WHERE ORDERS.ID = ?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, orderId);
+        resultSet = preparedStatement.executeQuery();
+        List<OrderItem> orderItemList = new ArrayList<>();
+        while (resultSet.next()) {
+            Order order = Order
+                    .builder()
+                    .id(resultSet.getInt("ordersId"))
+                    .build();
+            Product product = Product
+                    .builder()
+                    .id(resultSet.getInt("productsId"))
+                    .name(resultSet.getString("productName"))
+                    .price(resultSet.getFloat("price"))
+                    .build();
+            OrderItem orderItem = OrderItem
+                    .builder()
+                    .id(resultSet.getInt("orderItemsId"))
+                    .quantity(resultSet.getInt("quantity"))
+                    .order(order)
+                    .product(product)
+                    .build();
+            orderItemList.add(orderItem);
+        }
+        return orderItemList;
+    }
+
     @Override
     public OrderItem findById(Integer id) throws Exception {
         String sql = "SELECT ORDER_ITEMS.ID AS orderItemsId, QUANTITY, " +

@@ -4,35 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Validations Updated">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/FormState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/customerView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/sellerView.fxml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchModalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerModalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductModalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/customerModalView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/orderItemView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/orderView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/productModalView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/sellerModalView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/storeBranchModalView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/ConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QueryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/PersonModalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/personModalView.fxml" afterDir="false" />
     </list>
     <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
@@ -83,7 +77,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -99,11 +93,17 @@
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
     &quot;Application.QueryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,package].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [clean,test,package].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install-file].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [site].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [test].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [validate].executor&quot;: &quot;Run&quot;,
     &quot;Maven.StoreManagement [verify].executor&quot;: &quot;Run&quot;,
@@ -111,7 +111,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/Store-Management/StoreManagement/src/main/resources/temps&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/Store-Management/StoreManagement/src/main/java&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -140,6 +140,7 @@
       <recent name="com.storemgmt.Model.Entity.Enum" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources\temps" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Controller" />
@@ -224,7 +225,8 @@
       <workItem from="1741675101358" duration="15403000" />
       <workItem from="1741717847253" duration="9149000" />
       <workItem from="1741808200931" duration="2499000" />
-      <workItem from="1741851070211" duration="26916000" />
+      <workItem from="1741851070211" duration="32810000" />
+      <workItem from="1741933588988" duration="26770000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -314,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741884883120</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Some View Forms Made">
+      <option name="closed" value="true" />
+      <created>1741892561633</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741892561633</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +352,7 @@
     <MESSAGE value="Validation Layer" />
     <MESSAGE value="InventoryRepository and InventoryService updated" />
     <MESSAGE value="Validations Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validations Updated" />
+    <MESSAGE value="Some View Forms Made" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some View Forms Made" />
   </component>
 </project>
