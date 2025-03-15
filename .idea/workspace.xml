@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Update The Others, Add InventoryView">
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Change Version From 17 To 1.8 And Fix Bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
     </list>
-    <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,17 +50,6 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/pom.xml">
-      <ranges>
-        <range start1="17" end1="17" start2="17" end2="51" changelist="a102f8b7-0d1b-41be-8b39-10deb9da1c05" />
-        <range start1="26" end1="43" start2="60" end2="62" changelist="a102f8b7-0d1b-41be-8b39-10deb9da1c05" />
-        <range start1="53" end1="70" start2="72" end2="73" changelist="a102f8b7-0d1b-41be-8b39-10deb9da1c05" />
-        <range start1="79" end1="81" start2="82" end2="84" changelist="6f75e8a8-1f38-4847-8d22-25d4df069ba1" />
-        <range start1="87" end1="101" start2="90" end2="93" changelist="a102f8b7-0d1b-41be-8b39-10deb9da1c05" />
-      </ranges>
-    </file>
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -221,7 +207,8 @@
       <workItem from="1741717847253" duration="9149000" />
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
-      <workItem from="1741933588988" duration="37448000" />
+      <workItem from="1741933588988" duration="37837000" />
+      <workItem from="1742021392124" duration="312000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -343,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742020273083</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Change Version From 17 To 1.8 And Fix Bugs">
+      <option name="closed" value="true" />
+      <created>1742021075365</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1742021075365</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,6 +370,7 @@
     <MESSAGE value="Some View Forms Made: Order,OrderItem" />
     <MESSAGE value="OrderController updated" />
     <MESSAGE value="Update The Others, Add InventoryView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update The Others, Add InventoryView" />
+    <MESSAGE value="Change Version From 17 To 1.8 And Fix Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Version From 17 To 1.8 And Fix Bugs" />
   </component>
 </project>
