@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Change Version From 17 To 1.8 And Fix Bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="pom and log4j.properties">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
     </list>
-    <list id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,63 +68,63 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QueryTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [clean,test,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install-file].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StoreManagement [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/Store-Management/StoreManagement/src/main/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.45057473&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.MainApp.executor": "Run",
+    "Application.QueryTest.executor": "Run",
+    "Maven.StoreManagement [clean,package].executor": "Run",
+    "Maven.StoreManagement [clean,test,package].executor": "Run",
+    "Maven.StoreManagement [clean].executor": "Run",
+    "Maven.StoreManagement [compile].executor": "Run",
+    "Maven.StoreManagement [install].executor": "Run",
+    "Maven.StoreManagement [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.StoreManagement [org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy].executor": "Run",
+    "Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install-file].executor": "Run",
+    "Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install].executor": "Run",
+    "Maven.StoreManagement [package].executor": "Run",
+    "Maven.StoreManagement [site].executor": "Run",
+    "Maven.StoreManagement [test].executor": "Run",
+    "Maven.StoreManagement [validate].executor": "Run",
+    "Maven.StoreManagement [verify].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/projects/Java/Store-Management/StoreManagement/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.45057473",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;Oracle&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "Oracle"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;OracleSqlPlus&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "OracleSqlPlus"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.storemgmt.Model.Service" />
       <recent name="com.storemgmt.Model.Entity.Enum" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources\temps" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement" />
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Controller" />
-      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model\Db" />
@@ -184,7 +183,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="" />
-      <changelist id="a102f8b7-0d1b-41be-8b39-10deb9da1c05" name="Pom.xml" comment="" />
+      <changelist id="" name="Pom.xml" comment="" />
       <changelist id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="Dont" comment="" />
       <created>1740961424738</created>
       <option name="number" value="Default" />
@@ -208,7 +207,7 @@
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
       <workItem from="1741933588988" duration="37837000" />
-      <workItem from="1742021392124" duration="312000" />
+      <workItem from="1742021392124" duration="2775000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -338,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742021075365</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="pom and log4j.properties">
+      <option name="closed" value="true" />
+      <created>1742023514126</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1742023514126</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +378,7 @@
     <MESSAGE value="OrderController updated" />
     <MESSAGE value="Update The Others, Add InventoryView" />
     <MESSAGE value="Change Version From 17 To 1.8 And Fix Bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Version From 17 To 1.8 And Fix Bugs" />
+    <MESSAGE value="pom and log4j.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="pom and log4j.properties" />
   </component>
 </project>
