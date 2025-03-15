@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Fix log4j.properties">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/storeBranchView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DataCreator.java" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/6e233d22-f25d-4fa6-bce1-c7c4610c97fe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/personModalView - Copy.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,53 +79,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DataCreator.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "Application.MainApp.executor": "Run",
-    "Application.QueryTest.executor": "Run",
-    "Maven.StoreManagement [clean,package].executor": "Run",
-    "Maven.StoreManagement [clean,test,package].executor": "Run",
-    "Maven.StoreManagement [clean].executor": "Run",
-    "Maven.StoreManagement [compile].executor": "Run",
-    "Maven.StoreManagement [install].executor": "Run",
-    "Maven.StoreManagement [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
-    "Maven.StoreManagement [org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy].executor": "Run",
-    "Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install-file].executor": "Run",
-    "Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install].executor": "Run",
-    "Maven.StoreManagement [package].executor": "Run",
-    "Maven.StoreManagement [site].executor": "Run",
-    "Maven.StoreManagement [test].executor": "Run",
-    "Maven.StoreManagement [validate].executor": "Run",
-    "Maven.StoreManagement [verify].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/projects/Java/Store-Management/StoreManagement/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.45057473",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DataCreator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QueryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,test,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install-file].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/Store-Management/StoreManagement/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45057473&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "Oracle"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;Oracle&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "OracleSqlPlus"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;OracleSqlPlus&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.storemgmt.Model.Service" />
@@ -144,7 +155,7 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.DataCreator">
+  <component name="RunManager" selected="Application.MainApp">
     <configuration name="DataCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataCreator" />
       <module name="StoreManagement" />
@@ -165,18 +176,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="QueryTest" />
-      <module name="StoreManagement" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DataCreator" />
         <item itemvalue="Application.MainApp" />
-        <item itemvalue="Application.QueryTest" />
+        <item itemvalue="Application.DataCreator" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +219,7 @@
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
       <workItem from="1741933588988" duration="37837000" />
-      <workItem from="1742021392124" duration="4999000" />
+      <workItem from="1742021392124" duration="12975000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -370,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742026358042</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add faker for DataCreator.java,add ojdbc">
+      <option name="closed" value="true" />
+      <created>1742028037377</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1742028037377</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +417,7 @@
     <MESSAGE value="pom and log4j.properties" />
     <MESSAGE value="Add jansi For log4j Logging" />
     <MESSAGE value="Fix log4j.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix log4j.properties" />
+    <MESSAGE value="add faker for DataCreator.java,add ojdbc" />
+    <option name="LAST_COMMIT_MESSAGE" value="add faker for DataCreator.java,add ojdbc" />
   </component>
 </project>

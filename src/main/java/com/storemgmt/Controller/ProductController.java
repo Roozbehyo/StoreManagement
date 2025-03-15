@@ -33,8 +33,8 @@ public class ProductController implements Initializable {
     @FXML
     private TableColumn<Product, String> nameCol, priceCol;
 
-    private ProductValidator productValidator;
-    private ProductService productService;
+    private final ProductValidator productValidator = new ProductValidator();
+    private final ProductService productService = new ProductService();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -75,10 +75,14 @@ public class ProductController implements Initializable {
                     resetForm();
                     log.info("Product Saved : " + product);
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Saving Product Failed", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Saving Product Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
                     log.error("productService.save: " + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -101,10 +105,14 @@ public class ProductController implements Initializable {
                     resetForm();
                     log.info("Product Edited : " + product);
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Editing Product Failed", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Editing Product Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
                     log.error("productService.edit: " + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -137,10 +145,12 @@ public class ProductController implements Initializable {
         });
 
         nameSearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(productService.findAllByName(nameSearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (nameSearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(productService.findAllByName(nameSearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
     }

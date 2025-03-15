@@ -36,8 +36,8 @@ public class SellerController implements Initializable {
     @FXML
     private TableColumn<Seller, String> firstNameCol, lastNameCol, usernameCol;
 
-    private SellerValidator sellerValidator;
-    private SellerService sellerService;
+    private final SellerValidator sellerValidator = new SellerValidator();
+    private final SellerService sellerService = new SellerService();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -72,11 +72,15 @@ public class SellerController implements Initializable {
                     alert.show();
                     resetForm();
                     log.info("Seller Saved : " + seller);
-                }catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Saving Seller Failed", ButtonType.OK);
+                } catch (Exception e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Saving Seller Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
-                    log.error("sellerService.save: "+ e);
+                    log.error("sellerService.save: " + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -101,11 +105,14 @@ public class SellerController implements Initializable {
                     alert.show();
                     resetForm();
                     log.info("Seller Edited : " + seller);
-                }catch (Exception e) {
+                } catch (Exception e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Editing Seller Failed", ButtonType.OK);
                     alert.show();
-                    log.error("sellerService.edit: "+ e);
+                    log.error("sellerService.edit: " + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -118,17 +125,21 @@ public class SellerController implements Initializable {
         });
 
         nameSearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(sellerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (nameSearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(sellerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
         familySearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(sellerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (familySearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(sellerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
     }

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.storemgmt.Controller.MainController">
     <children>
@@ -52,6 +53,9 @@
                 </Menu>
             </menus>
         </MenuBar>
-      <Label fx:id="welcomeLabel" layoutX="144.0" layoutY="128.0" prefHeight="100.0" prefWidth="349.0" />
+      <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="19.0" layoutY="119.0" prefHeight="163.0" prefWidth="622.0">
+         <font>
+            <Font name="Arial Bold Italic" size="24.0" />
+         </font></Label>
     </children>
 </Pane>

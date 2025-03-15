@@ -28,7 +28,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        welcomeLabel.setText("Welcome " + FormViewer.loggedInSeller.getFirstname()
+        welcomeLabel.setText("Welcome Dear " + FormViewer.loggedInSeller.getFirstname()
                 .concat(" " + FormViewer.loggedInSeller.getLastname()));
         newSellerMnu.setOnAction(e -> {
             FormViewer.sellerFormState = FormState.New;
@@ -104,7 +104,7 @@ public class MainController implements Initializable {
     public void showSellerForm() {
         try {
             FormViewer formViewer = new FormViewer();
-            formViewer.showForm("Seller", "Seller Information");
+            formViewer.showForm("seller", "Seller Information");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -113,7 +113,7 @@ public class MainController implements Initializable {
     public void showCustomerForm() {
         try {
             FormViewer formViewer = new FormViewer();
-            formViewer.showForm("Customer", "Customer Information");
+            formViewer.showForm("customer", "Customer Information");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -122,7 +122,7 @@ public class MainController implements Initializable {
     public void showProductForm() {
         try {
             FormViewer formViewer = new FormViewer();
-            formViewer.showForm("Product", "Product Information");
+            formViewer.showForm("product", "Product Information");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -131,7 +131,7 @@ public class MainController implements Initializable {
     public void showOrderForm() {
         try {
             FormViewer formViewer = new FormViewer();
-            formViewer.showForm("Order", "Order Information");
+            formViewer.showForm("order", "Order Information");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -140,7 +140,7 @@ public class MainController implements Initializable {
     public void showInventoryForm() {
         try {
             FormViewer formViewer = new FormViewer();
-            formViewer.showForm("Inventory", "Inventory Information");
+            formViewer.showForm("inventory", "Inventory Information");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -149,7 +149,7 @@ public class MainController implements Initializable {
     public void showBranchForm() {
         try {
             FormViewer formViewer = new FormViewer();
-            formViewer.showForm("Branch", "Branch Information");
+            formViewer.showForm("storeBranch", "Store Branch Information");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

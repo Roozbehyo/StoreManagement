@@ -34,8 +34,8 @@ public class CustomerController implements Initializable {
     @FXML
     private TableColumn<Customer, String> firstNameCol, lastNameCol, phoneCol;
 
-    private CustomerValidator customerValidator;
-    private CustomerService customerService;
+    private final CustomerValidator customerValidator = new CustomerValidator();
+    private final CustomerService customerService = new CustomerService();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -93,10 +93,14 @@ public class CustomerController implements Initializable {
                     resetForm();
                     log.info("Customer Saved : " + customer);
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Saving Customer Failed", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Saving Customer Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
                     log.error("customerService.save:" + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -120,10 +124,14 @@ public class CustomerController implements Initializable {
                     resetForm();
                     log.info("Customer Edited : " + customer);
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Editing Process Failed");
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Editing Process Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
                     log.error("Error in customerService.edit: ", e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -156,17 +164,21 @@ public class CustomerController implements Initializable {
         });
 
         nameSearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(customerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (nameSearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(customerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
         familySearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(customerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (familySearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(customerService.findAllByFNameAndLName(nameSearchTxt.getText(), familySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
     }

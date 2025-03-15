@@ -6,7 +6,7 @@ create table customers
     birthdate   date,
     national_id nvarchar2(10),
     phone_num   nvarchar2(11),
-    sex         nvarchar2(6) check (sex in ('MALE', 'FEMALE')),
+    sex         nvarchar2(6),
     is_deleted  numeric(1) default 0
 );
 create sequence customer_seq start with 1 increment by 1;

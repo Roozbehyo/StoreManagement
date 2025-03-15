@@ -18,7 +18,7 @@ public class FormViewer {
     public void showForm(String formName, String title) throws IOException {
         log.info(formName + "Form Starting");
         Stage stage = new Stage();
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/temps" + formName + "View.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/temps/" + formName + "View.fxml")));
         stage.setScene(scene);
         stage.setTitle(title);
         stage.show();

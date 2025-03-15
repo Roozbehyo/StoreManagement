@@ -1,17 +1,17 @@
 package com.storemgmt.Controller;
 
-import com.storemgmt.Model.Entity.Seller;
 import com.storemgmt.Model.Service.SellerService;
-import com.storemgmt.Model.Validation.SellerValidator;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import lombok.extern.log4j.Log4j;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+@Log4j
 public class LoginController implements Initializable {
     @FXML
     private TextField userTxt;
@@ -20,7 +20,7 @@ public class LoginController implements Initializable {
     @FXML
     private Button loginBtn;
 
-    private SellerService sellerService;
+    private final SellerService sellerService = new SellerService();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -34,6 +34,7 @@ public class LoginController implements Initializable {
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Login Error\n" + e.getMessage());
                 alert.show();
+                log.error(e);
             }
         });
     }
