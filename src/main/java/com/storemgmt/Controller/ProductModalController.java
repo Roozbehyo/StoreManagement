@@ -1,5 +1,6 @@
 package com.storemgmt.Controller;
 
+import com.storemgmt.Model.Entity.Enum.ViewFormType;
 import com.storemgmt.Model.Entity.Product;
 import com.storemgmt.Model.Service.ProductService;
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 import java.util.List;
@@ -25,6 +27,8 @@ public class ProductModalController {
     @FXML
     private Button selectBtn, cancelBtn;
 
+    @Setter
+    private ViewFormType viewFormType;
     private Product selectedproduct;
     ProductService productService = new ProductService();
 
@@ -43,8 +47,14 @@ public class ProductModalController {
             if (selectedproduct != null) {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
-                OrderItemController orderItemController = new OrderItemController();
-                orderItemController.fillProductField(selectedproduct);
+                if (viewFormType == ViewFormType.Order_Item){
+                    OrderItemController orderItemController = new OrderItemController();
+                    orderItemController.fillProductField(selectedproduct);
+                }
+                if (viewFormType == ViewFormType.Inventory){
+                    InventoryController inventoryController = new InventoryController();
+                    inventoryController.fillProductField(selectedproduct);
+                }
             }
         });
         cancelBtn.setOnAction(e -> {

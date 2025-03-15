@@ -1,5 +1,6 @@
 package com.storemgmt.Controller;
 
+import com.storemgmt.Model.Entity.Enum.ViewFormType;
 import com.storemgmt.Model.Entity.Seller;
 import com.storemgmt.Model.Service.SellerService;
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 import java.util.List;
@@ -25,6 +27,8 @@ public class SellerModalController {
     @FXML
     private Button selectBtn, cancelBtn;
 
+    @Setter
+    private ViewFormType viewFormType;
     private Seller selectedseller;
     SellerService sellerService = new SellerService();
 
@@ -43,8 +47,12 @@ public class SellerModalController {
             if (selectedseller != null) {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
-                OrderController orderController = new OrderController();
-                orderController.fillSellerField(selectedseller);
+                if (viewFormType == ViewFormType.Order){
+                    OrderController orderController = new OrderController();
+                    orderController.fillSellerField(selectedseller);
+                }
+//                TODO ADD View Form Type StoreBranch(Branch_Seller)
+//                if (viewFormType == ViewFormType.Store_Branch){}
             }
         });
         cancelBtn.setOnAction(e -> {

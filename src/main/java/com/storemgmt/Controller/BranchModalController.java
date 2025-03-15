@@ -1,5 +1,6 @@
 package com.storemgmt.Controller;
 
+import com.storemgmt.Model.Entity.Enum.ViewFormType;
 import com.storemgmt.Model.Entity.StoreBranch;
 import com.storemgmt.Model.Service.StoreBranchService;
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 import java.util.List;
@@ -27,6 +29,8 @@ public class BranchModalController {
     @FXML
     private Button selectBtn, cancelBtn;
 
+    @Setter
+    private ViewFormType viewFormType;
     private StoreBranch selectedBranch;
     StoreBranchService storeBranchService = new StoreBranchService();
 
@@ -45,8 +49,17 @@ public class BranchModalController {
             if (selectedBranch != null) {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
-                OrderController orderController = new OrderController();
-                orderController.fillBranchField(selectedBranch);
+                if (viewFormType == ViewFormType.Order){
+                    OrderController orderController = new OrderController();
+                    orderController.fillBranchField(selectedBranch);
+                }
+
+                if (viewFormType == ViewFormType.Inventory){
+                    InventoryController inventoryController = new InventoryController();
+                    inventoryController.fillBranchField(selectedBranch);
+                }
+//                TODO ADD View Form Type StoreBranch
+//                if (viewFormType == ViewFormType.Store_Branch){}
             }
         });
         cancelBtn.setOnAction(e -> {

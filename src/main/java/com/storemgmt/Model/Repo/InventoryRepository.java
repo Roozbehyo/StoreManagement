@@ -41,13 +41,12 @@ public class InventoryRepository implements Repository<Inventory, Integer> {
     public void edit(Inventory inventory) throws Exception {
         preparedStatement = connection.prepareStatement(
                 "UPDATE INVENTORY " +
-                        "SET BRANCH_ID=?, QUANTITY=? " +
-                        "WHERE ID=? AND PRODUCT_ID=?"
+                        "SET QUANTITY=? " +
+                        "WHERE BRANCH_ID=? AND PRODUCT_ID=?"
         );
-        preparedStatement.setInt(1, inventory.getStoreBranch().getId());
-        preparedStatement.setInt(2, inventory.getQuantity());
-        preparedStatement.setInt(3, inventory.getId());
-        preparedStatement.setInt(4, inventory.getProduct().getId());
+        preparedStatement.setInt(1, inventory.getQuantity());
+        preparedStatement.setInt(2, inventory.getStoreBranch().getId());
+        preparedStatement.setInt(3, inventory.getProduct().getId());
         preparedStatement.execute();
     }
 

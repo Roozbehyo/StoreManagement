@@ -4,26 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchModalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerModalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductModalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/customerModalView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/orderItemView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/orderView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/productModalView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/sellerModalView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/storeBranchModalView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="OrderController updated">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/ViewFormType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/temps/inventoryView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/InventoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
@@ -41,9 +33,9 @@
       <list>
         <option value="Interface" />
         <option value="FxmlFile" />
-        <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -226,7 +218,7 @@
       <workItem from="1741717847253" duration="9149000" />
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
-      <workItem from="1741933588988" duration="26770000" />
+      <workItem from="1741933588988" duration="36417000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -324,7 +316,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741892561633</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some View Forms Made: Order,OrderItem">
+      <option name="closed" value="true" />
+      <created>1741990477719</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741990477719</updated>
+    </task>
+    <task id="LOCAL-00014" summary="OrderController updated">
+      <option name="closed" value="true" />
+      <created>1741995582948</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741995582948</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +361,8 @@
     <MESSAGE value="InventoryRepository and InventoryService updated" />
     <MESSAGE value="Validations Updated" />
     <MESSAGE value="Some View Forms Made" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some View Forms Made" />
+    <MESSAGE value="Some View Forms Made: Order,OrderItem" />
+    <MESSAGE value="OrderController updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="OrderController updated" />
   </component>
 </project>

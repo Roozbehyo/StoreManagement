@@ -2,6 +2,7 @@ package com.storemgmt.Controller;
 
 import com.storemgmt.Model.Entity.Customer;
 import com.storemgmt.Model.Entity.Enum.FormState;
+import com.storemgmt.Model.Entity.Enum.ViewFormType;
 import com.storemgmt.Model.Entity.Order;
 import com.storemgmt.Model.Entity.Seller;
 import com.storemgmt.Model.Entity.StoreBranch;
@@ -64,9 +65,10 @@ public class OrderController implements Initializable {
 
         addCustomerBtn.setOnAction(event -> {
             try {
-                formViewer.showForm("storeBranchModal", "Store Branch");
-                BranchModalController branchModalController = new BranchModalController();
-                branchModalController.loadBranchData();
+                formViewer.showForm("customerModal", "Customer");
+                CustomerModalController customerModalController = new CustomerModalController();
+                customerModalController.setViewFormType(ViewFormType.Order);
+                customerModalController.loadCustomerData();
             } catch (Exception e) {
                 log.error(e);
             }
@@ -76,6 +78,7 @@ public class OrderController implements Initializable {
             try {
                 formViewer.showForm("sellerModal", "Seller");
                 SellerModalController sellerModalController = new SellerModalController();
+                sellerModalController.setViewFormType(ViewFormType.Order);
                 sellerModalController.loadSellerData();
             } catch (Exception e) {
                 log.error(e);
@@ -84,9 +87,10 @@ public class OrderController implements Initializable {
 
         addBranchBtn.setOnAction(event -> {
             try {
-                formViewer.showForm("sellerModal", "Seller");
-                SellerModalController sellerModalController = new SellerModalController();
-                sellerModalController.loadSellerData();
+                formViewer.showForm("storeBranchModal", "Store Branch");
+                BranchModalController branchModalController = new BranchModalController();
+                branchModalController.setViewFormType(ViewFormType.Order);
+                branchModalController.loadBranchData();
             } catch (Exception e) {
                 log.error(e);
             }

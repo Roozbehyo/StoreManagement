@@ -37,7 +37,7 @@ public class OrderItemController implements Initializable {
     private OrderService orderService;
     private FormViewer formViewer;
     @Setter
-    public int orderId;
+    private int orderId;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

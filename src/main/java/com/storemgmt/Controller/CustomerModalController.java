@@ -1,6 +1,7 @@
 package com.storemgmt.Controller;
 
 import com.storemgmt.Model.Entity.Customer;
+import com.storemgmt.Model.Entity.Enum.ViewFormType;
 import com.storemgmt.Model.Service.CustomerService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 import java.util.List;
@@ -25,6 +27,8 @@ public class CustomerModalController {
     @FXML
     private Button selectBtn, cancelBtn;
 
+    @Setter
+    private ViewFormType viewFormType;
     private Customer selectedCustomer;
     CustomerService customerService = new CustomerService();
 
@@ -43,8 +47,10 @@ public class CustomerModalController {
             if (selectedCustomer != null) {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
-                OrderController orderController = new OrderController();
-                orderController.fillCustomerField(selectedCustomer);
+                if (viewFormType == ViewFormType.Order) {
+                    OrderController orderController = new OrderController();
+                    orderController.fillCustomerField(selectedCustomer);
+                }
             }
         });
         cancelBtn.setOnAction(e -> {
