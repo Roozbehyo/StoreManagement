@@ -38,7 +38,7 @@ public class CustomerValidator {
     }
 
     private boolean nationalIdValidator(String nationalId) {
-        if (nationalId == null || nationalId.isBlank()) {
+        if (nationalId == null) {
             return false;
         }
 
@@ -46,7 +46,7 @@ public class CustomerValidator {
     }
 
     private boolean phoneValidator(String phone) {
-        if (phone == null || phone.isBlank()) {
+        if (phone == null) {
             return false;
         }
 
