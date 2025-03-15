@@ -53,6 +53,7 @@ public class OrderController implements Initializable {
             log.info("Save Mode");
         }
         if (FormViewer.orderFormState.equals(FormState.Update)) {
+            showOrderItemsBtn.setDisable(true);
             addCustomerBtn.setDisable(true);
             addBranchBtn.setDisable(true);
             orderDate.setDisable(true);
@@ -216,6 +217,7 @@ public class OrderController implements Initializable {
         sellerFamilySearchTxt.clear();
         customerNameSearchTxt.clear();
         customerFamilySearchTxt.clear();
+        showOrderItemsBtn.setDisable(true);
         try {
             refreshTable(orderService.findAll());
         } catch (Exception e) {
@@ -247,6 +249,7 @@ public class OrderController implements Initializable {
                 seller.setText(order.getSeller().getLastname());
                 branch.setText(order.getStoreBranch().getBranchName());
                 orderDate.setValue(order.getOrderDate());
+                showOrderItemsBtn.setDisable(false);
             }
         });
     }

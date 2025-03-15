@@ -51,8 +51,10 @@ public class SellerModalController {
                     OrderController orderController = new OrderController();
                     orderController.fillSellerField(selectedseller);
                 }
-//                TODO ADD View Form Type StoreBranch(Branch_Seller)
-//                if (viewFormType == ViewFormType.Store_Branch){}
+                if (viewFormType == ViewFormType.Store_Branch){
+                    StoreBranchController storeBranchController = new StoreBranchController();
+                    storeBranchController.fillSellerField(selectedseller);
+                }
             }
         });
         cancelBtn.setOnAction(e -> {

@@ -17,7 +17,7 @@ public class BranchSellerService implements Service<BranchSeller, Integer> {
 
     @Override
     public void edit(BranchSeller branchSeller) throws Exception {
-        findById(branchSeller.getId());
+        findById(branchSeller.getStoreBranch().getId(), branchSeller.getSeller().getId());
         try (BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
             branchSellerRepository.edit(branchSeller);
         }
@@ -25,7 +25,10 @@ public class BranchSellerService implements Service<BranchSeller, Integer> {
 
     @Override
     public void remove(Integer branchId) throws Exception {
-        findById(branchId);
+        StoreBranch storeBranch = new StoreBranchService().findById(branchId);
+        if (storeBranch == null) {
+            throw new Exception("No Branch Found");
+        }
         try (BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
             branchSellerRepository.remove(branchId);
 
@@ -33,7 +36,7 @@ public class BranchSellerService implements Service<BranchSeller, Integer> {
     }
 
     public void remove(int branchId, int sellerId) throws Exception {
-        findById(branchId);
+        findById(branchId, sellerId);
         try (BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
             branchSellerRepository.remove(branchId, sellerId);
         }
@@ -47,6 +50,16 @@ public class BranchSellerService implements Service<BranchSeller, Integer> {
     @Override
     public BranchSeller findById(Integer id) throws Exception {
         return null;
+    }
+
+    public BranchSeller findById(int storeBranchId, int sellerId) throws Exception {
+        try(BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
+            BranchSeller branchSeller = branchSellerRepository.findById(storeBranchId, sellerId);
+            if (branchSeller == null) {
+                throw new Exception("Nothing Found");
+            }
+            return branchSeller;
+        }
     }
 
     public List<BranchSeller> findAllByStoreBranchId(Integer storeBranchId) throws Exception {

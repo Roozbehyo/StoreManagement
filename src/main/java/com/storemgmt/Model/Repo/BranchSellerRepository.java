@@ -78,6 +78,39 @@ public class BranchSellerRepository implements Repository<BranchSeller, Integer>
         return null;
     }
 
+    public BranchSeller findById(int storeBranchId, int sellerId) throws Exception {
+        String sql = "SELECT STORE_BRANCH.BRANCH_NAME, " +
+                "SELLERS.ID AS sellerId, SELLERS.FIRSTNAME AS sellerFName, " +
+                "SELLERS.LASTNAME AS sellerLName " +
+                "FROM BRANCH_SELLER " +
+                "JOIN STORE_BRANCH ON BRANCH_SELLER.BRANCH_ID = STORE_BRANCH.ID " +
+                "JOIN SELLERS ON BRANCH_SELLER.SELLER_ID = SELLERS.ID " +
+                "WHERE BRANCH_ID=? AND SELLER_ID=?";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, storeBranchId);
+        preparedStatement.setInt(2, sellerId);
+        resultSet = preparedStatement.executeQuery();
+        BranchSeller branchSeller = null;
+        if (resultSet.next()) {
+            StoreBranch storeBranch = StoreBranch
+                    .builder()
+                    .branchName(resultSet.getString("BRANCH_NAME"))
+                    .build();
+            Seller seller = Seller
+                    .builder()
+                    .id(resultSet.getInt("sellerId"))
+                    .firstname(resultSet.getString("sellerFName"))
+                    .lastname(resultSet.getString("sellerLName"))
+                    .build();
+            branchSeller = BranchSeller
+                    .builder()
+                    .storeBranch(storeBranch)
+                    .seller(seller)
+                    .build();
+        }
+        return branchSeller;
+    }
+
     public List<BranchSeller> findAllByStoreBranchId(int storeBranchId) throws Exception {
         String sql = "SELECT STORE_BRANCH.BRANCH_NAME, " +
                 "SELLERS.ID AS sellerId, SELLERS.FIRSTNAME AS sellerFName, " +

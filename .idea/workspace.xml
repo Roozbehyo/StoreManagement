@@ -4,23 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="">
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Debug Login,Main,Customer,Seller,Product">
       <change afterPath="$PROJECT_DIR$/src/main/resources/temps/storeBranchView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DataCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/StoreBranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/BranchSellerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/BranchSellerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/BranchSellerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/BranchSellerValidator.java" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/dataSources/6e233d22-f25d-4fa6-bce1-c7c4610c97fe.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/temps/personModalView - Copy.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DataCreator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +218,7 @@
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
       <workItem from="1741933588988" duration="37837000" />
-      <workItem from="1742021392124" duration="12975000" />
+      <workItem from="1742021392124" duration="29343000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -381,7 +380,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742028037377</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Debug Login,Main,Customer,Seller,Product">
+      <option name="closed" value="true" />
+      <created>1742038752889</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1742038752889</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,6 +425,7 @@
     <MESSAGE value="Add jansi For log4j Logging" />
     <MESSAGE value="Fix log4j.properties" />
     <MESSAGE value="add faker for DataCreator.java,add ojdbc" />
-    <option name="LAST_COMMIT_MESSAGE" value="add faker for DataCreator.java,add ojdbc" />
+    <MESSAGE value="Debug Login,Main,Customer,Seller,Product" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debug Login,Main,Customer,Seller,Product" />
   </component>
 </project>
