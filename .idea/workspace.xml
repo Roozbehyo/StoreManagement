@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="pom and log4j.properties">
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Add jansi For log4j Logging">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
     </list>
@@ -207,7 +208,7 @@
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
       <workItem from="1741933588988" duration="37837000" />
-      <workItem from="1742021392124" duration="2775000" />
+      <workItem from="1742021392124" duration="3704000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -345,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742023514126</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add jansi For log4j Logging">
+      <option name="closed" value="true" />
+      <created>1742025903754</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1742025903754</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,6 +388,7 @@
     <MESSAGE value="Update The Others, Add InventoryView" />
     <MESSAGE value="Change Version From 17 To 1.8 And Fix Bugs" />
     <MESSAGE value="pom and log4j.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom and log4j.properties" />
+    <MESSAGE value="Add jansi For log4j Logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add jansi For log4j Logging" />
   </component>
 </project>
