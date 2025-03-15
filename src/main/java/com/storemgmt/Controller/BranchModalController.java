@@ -58,8 +58,6 @@ public class BranchModalController {
                     InventoryController inventoryController = new InventoryController();
                     inventoryController.fillBranchField(selectedBranch);
                 }
-//                TODO ADD View Form Type StoreBranch
-//                if (viewFormType == ViewFormType.Store_Branch){}
             }
         });
         cancelBtn.setOnAction(e -> {
