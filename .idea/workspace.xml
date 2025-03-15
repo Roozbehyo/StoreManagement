@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Add jansi For log4j Logging">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Fix log4j.properties">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DataCreator.java" afterDir="false" />
     </list>
     <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MilitaryLicenseController.java" afterDir="false" />
@@ -71,6 +70,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DataCreator.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.MainApp.executor": "Run",
     "Application.QueryTest.executor": "Run",
@@ -144,7 +144,14 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainApp">
+  <component name="RunManager" selected="Application.DataCreator">
+    <configuration name="DataCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DataCreator" />
+      <module name="StoreManagement" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.storemgmt.MainApp" />
       <module name="StoreManagement" />
@@ -167,6 +174,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataCreator" />
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.QueryTest" />
       </list>
@@ -208,7 +216,7 @@
       <workItem from="1741808200931" duration="2499000" />
       <workItem from="1741851070211" duration="32810000" />
       <workItem from="1741933588988" duration="37837000" />
-      <workItem from="1742021392124" duration="3704000" />
+      <workItem from="1742021392124" duration="4999000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -354,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742025903754</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix log4j.properties">
+      <option name="closed" value="true" />
+      <created>1742026358042</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1742026358042</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +405,7 @@
     <MESSAGE value="Change Version From 17 To 1.8 And Fix Bugs" />
     <MESSAGE value="pom and log4j.properties" />
     <MESSAGE value="Add jansi For log4j Logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add jansi For log4j Logging" />
+    <MESSAGE value="Fix log4j.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix log4j.properties" />
   </component>
 </project>
