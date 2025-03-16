@@ -86,9 +86,7 @@ public class OrderItemController implements Initializable {
             }
         });
 
-        refreshBtn.setOnAction(event -> {
-            resetForm();
-        });
+        refreshBtn.setOnAction(event -> resetForm());
     }
 
     public void loadData() throws Exception {

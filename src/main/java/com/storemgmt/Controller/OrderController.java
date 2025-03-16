@@ -18,7 +18,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lombok.extern.log4j.Log4j;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -180,9 +179,7 @@ public class OrderController implements Initializable {
             }
         });
 
-        refreshBtn.setOnAction(event -> {
-            resetForm();
-        });
+        refreshBtn.setOnAction(event -> resetForm());
 
         sellerNameSearchTxt.setOnKeyReleased(event -> {
             if (sellerNameSearchTxt.getLength() > 0) {

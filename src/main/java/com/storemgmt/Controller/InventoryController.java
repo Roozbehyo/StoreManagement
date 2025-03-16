@@ -177,9 +177,7 @@ public class InventoryController implements Initializable {
             }
         });
 
-        refreshBtn.setOnAction(event -> {
-            resetForm();
-        });
+        refreshBtn.setOnAction(event -> resetForm());
     }
 
     private void resetForm() {
