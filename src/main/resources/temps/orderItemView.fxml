@@ -46,6 +46,11 @@
                 </TextField>
             </children>
         </GridPane>
+        <Button fx:id="saveBtn" layoutX="65.0" layoutY="430.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="245.0" style="-fx-background-color: #00aa00;" text="Save" textFill="#f7f7f7">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
         <TableView fx:id="orderItemTable" layoutX="375.0" layoutY="47.0" prefHeight="414.0" prefWidth="577.0">
             <columns>
                 <TableColumn fx:id="productNameCol" prefWidth="238.0" text="Product Name" />
@@ -53,11 +58,6 @@
                 <TableColumn fx:id="quantityCol" prefWidth="121.0" text="Quantity" />
             </columns>
         </TableView>
-        <Button fx:id="saveBtn" layoutX="65.0" layoutY="430.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="245.0" style="-fx-background-color: #00aa00;" text="Save" textFill="#f7f7f7">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
         <Button fx:id="refreshBtn" layoutX="917.0" layoutY="479.0" mnemonicParsing="false" text="🔄">
             <cursor>
                 <Cursor fx:constant="HAND" />

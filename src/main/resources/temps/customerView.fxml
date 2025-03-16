@@ -48,14 +48,6 @@
             <Label layoutX="10.0" layoutY="325.0" text="Sex" GridPane.rowIndex="6" />
             </children>
         </GridPane>
-        <TableView fx:id="customerTable" layoutX="375.0" layoutY="80.0" prefHeight="414.0" prefWidth="519.0">
-            <columns>
-                <TableColumn fx:id="idCol" prefWidth="44.0" text="Id" />
-                <TableColumn fx:id="firstNameCol" prefWidth="122.0" text="Name" />
-                <TableColumn fx:id="lastNameCol" prefWidth="175.0" text="Last Name" />
-                <TableColumn fx:id="phoneCol" prefWidth="177.0" text="Phone Number" />
-            </columns>
-        </TableView>
         <Button fx:id="saveBtn" layoutX="42.0" layoutY="511.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #00aa00;" text="Save" textFill="#f7f7f7">
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -66,7 +58,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="refreshBtn" layoutX="857.0" layoutY="510.0" mnemonicParsing="false" text="🔄">
+        <Button fx:id="deleteBtn" layoutX="242.0" layoutY="511.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #dd0000;" styleClass="deleteBtn" text="Delete" textFill="#f7f7f7">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -95,7 +87,15 @@
                 </TextField>
             </children>
         </HBox>
-        <Button fx:id="deleteBtn" layoutX="242.0" layoutY="511.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #dd0000;" styleClass="deleteBtn" text="Delete" textFill="#f7f7f7">
+        <TableView fx:id="customerTable" layoutX="375.0" layoutY="80.0" prefHeight="414.0" prefWidth="519.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="44.0" text="Id" />
+                <TableColumn fx:id="firstNameCol" prefWidth="122.0" text="Name" />
+                <TableColumn fx:id="lastNameCol" prefWidth="175.0" text="Last Name" />
+                <TableColumn fx:id="phoneCol" prefWidth="177.0" text="Phone Number" />
+            </columns>
+        </TableView>
+        <Button fx:id="refreshBtn" layoutX="857.0" layoutY="510.0" mnemonicParsing="false" text="🔄">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>

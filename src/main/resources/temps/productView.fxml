@@ -34,13 +34,6 @@
                 <TextField fx:id="price" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
         </GridPane>
-        <TableView fx:id="productTable" layoutX="386.0" layoutY="65.0" prefHeight="414.0" prefWidth="482.0">
-            <columns>
-                <TableColumn fx:id="idCol" prefWidth="44.0" text="Id" />
-                <TableColumn fx:id="nameCol" prefWidth="236.0" text="Product Name" />
-                <TableColumn fx:id="priceCol" prefWidth="201.0" text="Price(Rial)" />
-            </columns>
-        </TableView>
         <Button fx:id="saveBtn" layoutX="42.0" layoutY="448.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #00aa00;" text="Save" textFill="#f7f7f7">
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -52,11 +45,6 @@
             </cursor>
         </Button>
         <Button fx:id="deleteBtn" layoutX="242.0" layoutY="448.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #dd0000;" styleClass="deleteBtn" text="Delete" textFill="#f7f7f7">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button fx:id="refreshBtn" layoutX="833.0" layoutY="494.0" mnemonicParsing="false" text="🔄">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -75,5 +63,17 @@
                 </TextField>
             </children>
         </HBox>
+        <TableView fx:id="productTable" layoutX="386.0" layoutY="65.0" prefHeight="414.0" prefWidth="482.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="44.0" text="Id" />
+                <TableColumn fx:id="nameCol" prefWidth="236.0" text="Product Name" />
+                <TableColumn fx:id="priceCol" prefWidth="201.0" text="Price(Rial)" />
+            </columns>
+        </TableView>
+        <Button fx:id="refreshBtn" layoutX="833.0" layoutY="494.0" mnemonicParsing="false" text="🔄">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
     </children>
 </Pane>

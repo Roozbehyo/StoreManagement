@@ -41,25 +41,12 @@
             <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             </children>
         </GridPane>
-        <TableView fx:id="sellerTable" layoutX="375.0" layoutY="80.0" prefHeight="414.0" prefWidth="465.0">
-            <columns>
-                <TableColumn fx:id="idCol" prefWidth="51.0" text="Id" />
-                <TableColumn fx:id="firstNameCol" prefWidth="100.0" text="Name" />
-                <TableColumn fx:id="lastNameCol" prefWidth="180.0" text="Last Name" />
-                <TableColumn fx:id="usernameCol" prefWidth="133.0" text="Username" />
-            </columns>
-        </TableView>
         <Button fx:id="saveBtn" layoutX="77.0" layoutY="494.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #00aa00;" text="Save" textFill="#f7f7f7">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
         <Button fx:id="updateBtn" layoutX="232.0" layoutY="494.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #0044ff;" text="Update" textFill="#f7f7f7">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button fx:id="refreshBtn" layoutX="805.0" layoutY="510.0" mnemonicParsing="false" text="🔄">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
@@ -88,5 +75,18 @@
                 </TextField>
             </children>
         </HBox>
+        <TableView fx:id="sellerTable" layoutX="375.0" layoutY="80.0" prefHeight="414.0" prefWidth="465.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="51.0" text="Id" />
+                <TableColumn fx:id="firstNameCol" prefWidth="100.0" text="Name" />
+                <TableColumn fx:id="lastNameCol" prefWidth="180.0" text="Last Name" />
+                <TableColumn fx:id="usernameCol" prefWidth="133.0" text="Username" />
+            </columns>
+        </TableView>
+        <Button fx:id="refreshBtn" layoutX="805.0" layoutY="510.0" mnemonicParsing="false" text="🔄">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
     </children>
 </Pane>

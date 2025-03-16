@@ -68,14 +68,11 @@
             </Button>
             </children>
         </GridPane>
-        <TableView fx:id="orderTable" layoutX="375.0" layoutY="103.0" prefHeight="414.0" prefWidth="577.0">
-            <columns>
-                <TableColumn fx:id="idCol" prefWidth="44.0" text="Id" />
-                <TableColumn fx:id="customerCol" prefWidth="179.0" text="Customer" />
-                <TableColumn fx:id="sellerCol" prefWidth="179.0" text="Seller" />
-                <TableColumn fx:id="orderDateCol" prefWidth="174.0" text="Order Date" />
-            </columns>
-        </TableView>
+      <Button fx:id="showOrderItemsBtn" layoutX="32.0" layoutY="494.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" text="Detail">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
         <Button fx:id="saveBtn" layoutX="142.0" layoutY="494.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: #00aa00;" text="Save" textFill="#f7f7f7">
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -86,35 +83,6 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="refreshBtn" layoutX="917.0" layoutY="534.0" mnemonicParsing="false" text="🔄">
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <HBox fx:id="searchHBox" layoutX="375.0" layoutY="56.0" prefHeight="31.0" prefWidth="577.0">
-            <children>
-                <Label prefHeight="21.0" prefWidth="131.0" text="Customer Name">
-                    <HBox.margin>
-                        <Insets left="15.0" top="5.0" />
-                    </HBox.margin>
-                </Label>
-                <TextField fx:id="customerNameSearchTxt" prefHeight="31.0" prefWidth="161.0">
-                    <HBox.margin>
-                        <Insets left="10.0" />
-                    </HBox.margin>
-                </TextField>
-                <Label prefHeight="17.0" prefWidth="59.0" text="Family">
-                    <HBox.margin>
-                        <Insets left="40.0" top="5.0" />
-                    </HBox.margin>
-                </Label>
-                <TextField fx:id="customerFamilySearchTxt" prefHeight="31.0" prefWidth="174.0">
-                    <HBox.margin>
-                        <Insets left="10.0" />
-                    </HBox.margin>
-                </TextField>
-            </children>
-        </HBox>
       <HBox fx:id="searchHBox1" layoutX="376.0" layoutY="25.0" prefHeight="31.0" prefWidth="577.0">
          <children>
             <Label prefHeight="21.0" prefWidth="131.0" text="Seller Name">
@@ -139,11 +107,43 @@
             </TextField>
          </children>
       </HBox>
-      <Button fx:id="showOrderItemsBtn" layoutX="32.0" layoutY="494.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" text="Detail">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+        <HBox fx:id="searchHBox" layoutX="375.0" layoutY="56.0" prefHeight="31.0" prefWidth="577.0">
+            <children>
+                <Label prefHeight="21.0" prefWidth="131.0" text="Customer Name">
+                    <HBox.margin>
+                        <Insets left="15.0" top="5.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="customerNameSearchTxt" prefHeight="31.0" prefWidth="161.0">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </TextField>
+                <Label prefHeight="17.0" prefWidth="59.0" text="Family">
+                    <HBox.margin>
+                        <Insets left="40.0" top="5.0" />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="customerFamilySearchTxt" prefHeight="31.0" prefWidth="174.0">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <TableView fx:id="orderTable" layoutX="375.0" layoutY="103.0" prefHeight="414.0" prefWidth="577.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="44.0" text="Id" />
+                <TableColumn fx:id="customerCol" prefWidth="179.0" text="Customer" />
+                <TableColumn fx:id="sellerCol" prefWidth="179.0" text="Seller" />
+                <TableColumn fx:id="orderDateCol" prefWidth="174.0" text="Order Date" />
+            </columns>
+        </TableView>
+        <Button fx:id="refreshBtn" layoutX="917.0" layoutY="534.0" mnemonicParsing="false" text="🔄">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
       <TextField fx:id="customerId" disable="true" layoutX="79.0" layoutY="41.0" prefHeight="31.0" prefWidth="46.0" visible="false" />
       <TextField fx:id="sellerId" disable="true" layoutX="32.0" layoutY="41.0" prefHeight="21.0" prefWidth="46.0" visible="false" />
       <TextField fx:id="branchId" disable="true" layoutX="102.0" layoutY="33.0" prefHeight="21.0" prefWidth="46.0" visible="false" />

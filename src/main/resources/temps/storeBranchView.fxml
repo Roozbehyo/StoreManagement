@@ -44,12 +44,6 @@
                 </TextField>
             </children>
         </GridPane>
-        <TableView fx:id="storeBranchTable" layoutX="375.0" layoutY="72.0" prefHeight="238.0" prefWidth="322.0">
-            <columns>
-                <TableColumn fx:id="branchIdCol" prefWidth="67.0" text="Id" />
-                <TableColumn fx:id="branchNameCol" prefWidth="254.0" text="Branch Name" />
-            </columns>
-        </TableView>
         <Button fx:id="showSellersBtn" layoutX="20.0" layoutY="279.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" text="Sellers">
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -84,6 +78,12 @@
                 </TextField>
             </children>
         </HBox>
+        <TableView fx:id="storeBranchTable" layoutX="375.0" layoutY="72.0" prefHeight="238.0" prefWidth="322.0">
+            <columns>
+                <TableColumn fx:id="branchIdCol" prefWidth="67.0" text="Id" />
+                <TableColumn fx:id="branchNameCol" prefWidth="254.0" text="Branch Name" />
+            </columns>
+        </TableView>
         <Pane fx:id="branchSellerPane" layoutX="-2.0" layoutY="335.0" prefHeight="335.0" prefWidth="727.0" visible="false">
             <children>
                 <GridPane layoutX="35.0" layoutY="91.0" prefHeight="121.0" prefWidth="311.0">
