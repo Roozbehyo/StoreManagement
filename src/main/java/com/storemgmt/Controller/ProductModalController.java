@@ -31,6 +31,10 @@ public class ProductModalController {
     private ViewFormType viewFormType;
     private Product selectedproduct;
     ProductService productService = new ProductService();
+    @Setter
+    OrderItemController orderItemController;
+    @Setter
+    InventoryController inventoryController;
 
     @FXML
     public void initialize() {
@@ -48,11 +52,9 @@ public class ProductModalController {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
                 if (viewFormType == ViewFormType.Order_Item){
-                    OrderItemController orderItemController = new OrderItemController();
                     orderItemController.fillProductField(selectedproduct);
                 }
                 if (viewFormType == ViewFormType.Inventory){
-                    InventoryController inventoryController = new InventoryController();
                     inventoryController.fillProductField(selectedproduct);
                 }
             }

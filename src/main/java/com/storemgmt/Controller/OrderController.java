@@ -40,9 +40,9 @@ public class OrderController implements Initializable {
     @FXML
     private TableColumn<Order, String> customerCol, sellerCol, orderDateCol;
 
-    private OrderValidator orderValidator;
-    private OrderService orderService;
-    private FormViewer formViewer;
+    private final OrderValidator orderValidator = new OrderValidator();
+    private final OrderService orderService = new OrderService();
+    private final FormViewer formViewer = new FormViewer();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -67,9 +67,10 @@ public class OrderController implements Initializable {
         addCustomerBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("customerModal", "Customer");
-                CustomerModalController customerModalController = new CustomerModalController();
+                CustomerModalController customerModalController =
+                        (CustomerModalController) FormViewer.getLastLoadedController();
                 customerModalController.setViewFormType(ViewFormType.Order);
-                customerModalController.loadCustomerData();
+                customerModalController.setOrderController(this);
             } catch (Exception e) {
                 log.error(e);
             }
@@ -78,9 +79,10 @@ public class OrderController implements Initializable {
         addSellerBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("sellerModal", "Seller");
-                SellerModalController sellerModalController = new SellerModalController();
+                SellerModalController sellerModalController =
+                        (SellerModalController) FormViewer.getLastLoadedController();
                 sellerModalController.setViewFormType(ViewFormType.Order);
-                sellerModalController.loadSellerData();
+                sellerModalController.setOrderController(this);
             } catch (Exception e) {
                 log.error(e);
             }
@@ -89,9 +91,10 @@ public class OrderController implements Initializable {
         addBranchBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("storeBranchModal", "Store Branch");
-                BranchModalController branchModalController = new BranchModalController();
+                BranchModalController branchModalController =
+                        (BranchModalController) FormViewer.getLastLoadedController();
                 branchModalController.setViewFormType(ViewFormType.Order);
-                branchModalController.loadBranchData();
+                branchModalController.setOrderController(this);
             } catch (Exception e) {
                 log.error(e);
             }
@@ -120,6 +123,9 @@ public class OrderController implements Initializable {
                     alert.show();
                     log.error("orderService.save:" + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -148,6 +154,9 @@ public class OrderController implements Initializable {
                     alert.show();
                     log.error("Error in orderService.edit: ", e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -157,14 +166,17 @@ public class OrderController implements Initializable {
 
         showOrderItemsBtn.setOnAction(event -> {
             try {
-                formViewer.showForm("orderItems", "Order Detail");
-                OrderItemController orderItemController = new OrderItemController();
-                orderItemController.setOrderId(Integer.parseInt(id.getText()));
+                formViewer.showForm("orderItem", "Order Detail");
+                OrderItemController orderItemController =
+                        (OrderItemController) FormViewer.getLastLoadedController();
+                Order order = Order.builder().id(Integer.parseInt(id.getText())).build();
+                orderItemController.setOrderId(order.getId());
+                orderItemController.loadData();
                 log.info("Showing OrderItems");
-            } catch (IOException e) {
+            } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Something went wrong");
                 alert.show();
-                log.error(e);
+                log.error("LoadData Error: ", e);
             }
         });
 
@@ -173,36 +185,44 @@ public class OrderController implements Initializable {
         });
 
         sellerNameSearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(orderService.findAllBySellerFNameAndLName(sellerNameSearchTxt.getText(),
-                        sellerFamilySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (sellerNameSearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(orderService.findAllBySellerFNameAndLName(sellerNameSearchTxt.getText(),
+                            sellerFamilySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
         sellerFamilySearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(orderService.findAllBySellerFNameAndLName(sellerNameSearchTxt.getText(),
-                        sellerFamilySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (sellerFamilySearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(orderService.findAllBySellerFNameAndLName(sellerNameSearchTxt.getText(),
+                            sellerFamilySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
 
         customerNameSearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(orderService.findAllByCustomerFNameAndLName(customerNameSearchTxt.getText(),
-                        customerFamilySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (customerNameSearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(orderService.findAllByCustomerFNameAndLName(customerNameSearchTxt.getText(),
+                            customerFamilySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
         customerFamilySearchTxt.setOnKeyReleased(event -> {
-            try {
-                refreshTable(orderService.findAllByCustomerFNameAndLName(customerNameSearchTxt.getText(),
-                        customerFamilySearchTxt.getText()));
-            } catch (Exception e) {
-                log.error(e);
+            if (customerFamilySearchTxt.getLength() > 0) {
+                try {
+                    refreshTable(orderService.findAllByCustomerFNameAndLName(customerNameSearchTxt.getText(),
+                            customerFamilySearchTxt.getText()));
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
     }
@@ -212,6 +232,9 @@ public class OrderController implements Initializable {
         customer.clear();
         seller.clear();
         branch.clear();
+        customerId.clear();
+        sellerId.clear();
+        branchId.clear();
         orderDate.setValue(null);
         sellerNameSearchTxt.clear();
         sellerFamilySearchTxt.clear();
@@ -245,9 +268,14 @@ public class OrderController implements Initializable {
             Order order = orderTable.getSelectionModel().getSelectedItem();
             if (order != null) {
                 id.setText(String.valueOf(order.getId()));
-                customer.setText(order.getCustomer().getLastname());
-                seller.setText(order.getSeller().getLastname());
+                customer.setText(order.getCustomer().getFirstname()
+                        .concat(" " + order.getCustomer().getLastname()));
+                seller.setText(order.getSeller().getFirstname()
+                        .concat(" " + order.getSeller().getLastname()));
                 branch.setText(order.getStoreBranch().getBranchName());
+                customerId.setText(String.valueOf(order.getCustomer().getId()));
+                sellerId.setText(String.valueOf(order.getSeller().getId()));
+                branchId.setText(String.valueOf(order.getStoreBranch().getId()));
                 orderDate.setValue(order.getOrderDate());
                 showOrderItemsBtn.setDisable(false);
             }
@@ -255,50 +283,29 @@ public class OrderController implements Initializable {
     }
 
     public void fillCustomerField(Customer selectedCustomer) {
-        System.out.println(selectedCustomer);
-        System.out.println(selectedCustomer.getFirstname().concat(selectedCustomer.getLastname()));
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
             if (customer != null) {
-                customer.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("Customer is null!");
+                customer.setText(selectedCustomer.getFirstname().concat(" " + selectedCustomer.getLastname()));
+                customerId.setText(String.valueOf(selectedCustomer.getId()));
             }
         });
-        customer.setText(selectedCustomer.getFirstname().concat(selectedCustomer.getLastname()));
-        customerId.setText(String.valueOf(selectedCustomer.getId()));
     }
 
     public void fillSellerField(Seller selectedSeller) {
-        System.out.println(selectedSeller);
-        System.out.println(selectedSeller.getFirstname().concat(selectedSeller.getLastname()));
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
             if (seller != null) {
-                seller.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("Seller is null!");
+                seller.setText(selectedSeller.getFirstname().concat(" " + selectedSeller.getLastname()));
+                sellerId.setText(String.valueOf(selectedSeller.getId()));
             }
         });
-        seller.setText(selectedSeller.getFirstname().concat(selectedSeller.getLastname()));
-        sellerId.setText(String.valueOf(selectedSeller.getId()));
     }
 
     public void fillBranchField(StoreBranch selectedBranch) {
-        System.out.println(selectedBranch);
-        System.out.println(selectedBranch.getBranchName());
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
-            if (seller != null) {
-                seller.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("Store Branch is null!");
+            if (branch != null) {
+                branch.setText(selectedBranch.getBranchName());
+                branchId.setText(String.valueOf(selectedBranch.getId()));
             }
         });
-        seller.setText(selectedBranch.getBranchName());
-        sellerId.setText(String.valueOf(selectedBranch.getId()));
     }
 }

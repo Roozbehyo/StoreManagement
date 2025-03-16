@@ -101,7 +101,7 @@ public class OrderRepository implements Repository<Order, Integer> {
         String sql = "SELECT ORDERS.ID AS ordersId, ORDER_DATE, " +
                 "SELLERS.FIRSTNAME AS sellerFName, SELLERS.LASTNAME AS sellerLName, " +
                 "CUSTOMERS.FIRSTNAME AS customerFName, CUSTOMERS.LASTNAME AS customerLName, " +
-                "STORE_BRANCH.BRANCH_NAME " +
+                "STORE_BRANCH.ID AS storeBranchId, STORE_BRANCH.BRANCH_NAME " +
                 "FROM ORDERS " +
                 "JOIN SELLERS ON ORDERS.SELLER_ID = SELLERS.ID " +
                 "JOIN CUSTOMERS ON ORDERS.CUSTOMER_ID = CUSTOMERS.ID " +
@@ -125,6 +125,7 @@ public class OrderRepository implements Repository<Order, Integer> {
                     .build();
             StoreBranch storeBranch = StoreBranch
                     .builder()
+                    .id(resultSet.getInt("storeBranchId"))
                     .branchName(resultSet.getString("branch_name"))
                     .build();
             order = Order

@@ -31,6 +31,8 @@ public class CustomerModalController {
     private ViewFormType viewFormType;
     private Customer selectedCustomer;
     CustomerService customerService = new CustomerService();
+    @Setter
+    private OrderController orderController;
 
     @FXML
     public void initialize() {
@@ -48,8 +50,7 @@ public class CustomerModalController {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
                 if (viewFormType == ViewFormType.Order) {
-                    OrderController orderController = new OrderController();
-                    orderController.fillCustomerField(selectedCustomer);
+                        orderController.fillCustomerField(selectedCustomer);
                 }
             }
         });

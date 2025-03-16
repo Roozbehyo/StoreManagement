@@ -4,7 +4,9 @@ import com.storemgmt.Model.Entity.Enum.FormState;
 import com.storemgmt.Model.Entity.Seller;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j;
 
 import java.io.IOException;
@@ -14,11 +16,17 @@ public class FormViewer {
     public static FormState sellerFormState, customerFormState, productFormState, orderFormState, inventoryFormState;
     public static FormState branchFormState;
     public static Seller loggedInSeller;
+    @Getter
+    private static Object lastLoadedController;
 
     public void showForm(String formName, String title) throws IOException {
         log.info(formName + "Form Starting");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/temps/" + formName + "View.fxml"));
+        Pane root = loader.load();
+
+        lastLoadedController = loader.getController();
         Stage stage = new Stage();
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/temps/" + formName + "View.fxml")));
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle(title);
         stage.show();

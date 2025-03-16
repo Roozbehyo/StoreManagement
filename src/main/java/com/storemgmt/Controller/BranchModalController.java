@@ -33,6 +33,10 @@ public class BranchModalController {
     private ViewFormType viewFormType;
     private StoreBranch selectedBranch;
     StoreBranchService storeBranchService = new StoreBranchService();
+    @Setter
+    private OrderController orderController;
+    @Setter
+    private InventoryController inventoryController;
 
     @FXML
     public void initialize() {
@@ -50,12 +54,10 @@ public class BranchModalController {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
                 if (viewFormType == ViewFormType.Order){
-                    OrderController orderController = new OrderController();
                     orderController.fillBranchField(selectedBranch);
                 }
 
                 if (viewFormType == ViewFormType.Inventory){
-                    InventoryController inventoryController = new InventoryController();
                     inventoryController.fillBranchField(selectedBranch);
                 }
             }

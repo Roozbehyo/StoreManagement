@@ -3,13 +3,18 @@ package com.storemgmt.Model.Service;
 import com.storemgmt.Model.Entity.BranchSeller;
 import com.storemgmt.Model.Entity.StoreBranch;
 import com.storemgmt.Model.Repo.BranchSellerRepository;
+import lombok.extern.log4j.Log4j;
 
 import java.util.List;
 
+@Log4j
 public class BranchSellerService implements Service<BranchSeller, Integer> {
     @Override
     public void save(BranchSeller branchSeller) throws Exception {
-
+        BranchSeller result = findById(branchSeller.getSeller().getId());
+        if (result != null) {
+            throw new Exception("Seller Already Assigned");
+        }
         try (BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
             branchSellerRepository.save(branchSeller);
         }
@@ -48,12 +53,19 @@ public class BranchSellerService implements Service<BranchSeller, Integer> {
     }
 
     @Override
-    public BranchSeller findById(Integer id) throws Exception {
-        return null;
+    public BranchSeller findById(Integer sellerId) throws Exception {
+        try (BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
+            BranchSeller branchSeller = branchSellerRepository.findById(sellerId);
+            if (branchSeller == null) {
+                log.info("No Seller Found");
+                return null;
+            }
+            return branchSeller;
+        }
     }
 
     public BranchSeller findById(int storeBranchId, int sellerId) throws Exception {
-        try(BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
+        try (BranchSellerRepository branchSellerRepository = new BranchSellerRepository()) {
             BranchSeller branchSeller = branchSellerRepository.findById(storeBranchId, sellerId);
             if (branchSeller == null) {
                 throw new Exception("Nothing Found");

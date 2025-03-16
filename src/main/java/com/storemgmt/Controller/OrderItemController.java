@@ -1,5 +1,6 @@
 package com.storemgmt.Controller;
 
+import com.storemgmt.Model.Entity.Enum.ViewFormType;
 import com.storemgmt.Model.Entity.Order;
 import com.storemgmt.Model.Entity.OrderItem;
 import com.storemgmt.Model.Entity.Product;
@@ -32,29 +33,23 @@ public class OrderItemController implements Initializable {
     @FXML
     private TableColumn<OrderItem, String> productNameCol, productPriceCol, quantityCol;
 
-    private OrderItemValidator orderItemValidator;
-    private OrderItemService orderItemService;
-    private OrderService orderService;
-    private FormViewer formViewer;
+    private final OrderItemValidator orderItemValidator = new OrderItemValidator();
+    private final OrderItemService orderItemService = new OrderItemService();
+    private final OrderService orderService = new OrderService();
+    private final FormViewer formViewer = new FormViewer();
     @Setter
-    private int orderId;
+    private Integer orderId;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         log.info("View initialized");
-        try {
-            loadData();
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Nothing to show");
-            alert.show();
-            log.error(e);
-        }
-
         addProductBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("productModal", "Product");
-                ProductModalController productModalController = new ProductModalController();
-                productModalController.loadProductData();
+                ProductModalController productModalController =
+                        (ProductModalController) FormViewer.getLastLoadedController();
+                productModalController.setViewFormType(ViewFormType.Order_Item);
+                productModalController.setOrderItemController(this);
             } catch (Exception e) {
                 log.error(e);
             }
@@ -81,6 +76,9 @@ public class OrderItemController implements Initializable {
                     alert.show();
                     log.error("orderItemService.save:" + e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -95,12 +93,13 @@ public class OrderItemController implements Initializable {
 
     public void loadData() throws Exception {
         try {
-           Order order = orderService.findById(orderId);
-           if (order != null) {
-               orderIdTxt.setText(String.valueOf(orderId));
-               resetForm();
-           }
+            Order order = orderService.findById(orderId);
+            if (order != null) {
+                orderIdTxt.setText(String.valueOf(orderId));
+                resetForm();
+            }
         } catch (Exception e) {
+            log.error(e);
             throw new Exception(e);
         }
     }
@@ -131,18 +130,11 @@ public class OrderItemController implements Initializable {
     }
 
     public void fillProductField(Product selectedProduct) {
-        System.out.println(selectedProduct);
-        System.out.println(selectedProduct.getName());
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
             if (product != null) {
-                product.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("Product is null!");
+                product.setText(selectedProduct.getName());
+                productId.setText(String.valueOf(selectedProduct.getId()));
             }
         });
-        product.setText(selectedProduct.getName());
-        productId.setText(String.valueOf(selectedProduct.getId()));
     }
 }

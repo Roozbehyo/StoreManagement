@@ -31,6 +31,10 @@ public class SellerModalController {
     private ViewFormType viewFormType;
     private Seller selectedseller;
     SellerService sellerService = new SellerService();
+    @Setter
+    private OrderController orderController;
+    @Setter
+    private StoreBranchController storeBranchController;
 
     @FXML
     public void initialize() {
@@ -48,11 +52,9 @@ public class SellerModalController {
                 Stage stage = (Stage) selectBtn.getScene().getWindow();
                 stage.close();
                 if (viewFormType == ViewFormType.Order){
-                    OrderController orderController = new OrderController();
                     orderController.fillSellerField(selectedseller);
                 }
                 if (viewFormType == ViewFormType.Store_Branch){
-                    StoreBranchController storeBranchController = new StoreBranchController();
                     storeBranchController.fillSellerField(selectedseller);
                 }
             }

@@ -10,6 +10,11 @@ public class InventoryService implements Service<Inventory, Integer> {
     public void save(Inventory inventory) throws Exception {
         validate(inventory);
         try (InventoryRepository inventoryRepository = new InventoryRepository()) {
+            Inventory result =
+                    inventoryRepository.findById(inventory.getStoreBranch().getId(), inventory.getProduct().getId());
+            if (result != null) {
+                throw new Exception("The Item Is Already Exists");
+            }
             inventoryRepository.save(inventory);
         }
     }

@@ -32,9 +32,9 @@ public class InventoryController implements Initializable {
     @FXML
     private TableColumn<Inventory, String> productCol, quantityCol, branchCol;
 
-    private InventoryValidator inventoryValidator;
-    private InventoryService inventoryService;
-    private FormViewer formViewer;
+    private final InventoryValidator inventoryValidator = new InventoryValidator();
+    private final InventoryService inventoryService = new InventoryService();
+    private final FormViewer formViewer = new FormViewer();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -67,9 +67,10 @@ public class InventoryController implements Initializable {
         addProductBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("productModal", "Product");
-                ProductModalController productModalController = new ProductModalController();
+                ProductModalController productModalController =
+                        (ProductModalController) FormViewer.getLastLoadedController();
                 productModalController.setViewFormType(ViewFormType.Inventory);
-                productModalController.loadProductData();
+                productModalController.setInventoryController(this);
             } catch (Exception e) {
                 log.error(e);
             }
@@ -77,10 +78,11 @@ public class InventoryController implements Initializable {
 
         addBranchBtn.setOnAction(event -> {
             try {
-                formViewer.showForm("branchModal", "Branch");
-                BranchModalController branchModalController = new BranchModalController();
+                formViewer.showForm("storeBranchModal", "Branch");
+                BranchModalController branchModalController =
+                        (BranchModalController) FormViewer.getLastLoadedController();
                 branchModalController.setViewFormType(ViewFormType.Inventory);
-                branchModalController.loadBranchData();
+                branchModalController.setInventoryController(this);
             } catch (Exception e) {
                 log.error(e);
             }
@@ -98,16 +100,19 @@ public class InventoryController implements Initializable {
                 inventoryValidator.validateInventory(inventory);
                 try {
                     inventoryService.save(inventory);
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "New Inventory Saved", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "New Item Saved", ButtonType.OK);
                     alert.show();
                     resetForm();
                     log.info("inventory Saved : " + inventory);
-                    formViewer.showForm("inventory", "Inventory Detail");
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Saving Inventory Failed", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Saving Item Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
                     log.error("inventoryService.save:" + e);
                 }
+            } catch (NumberFormatException | NullPointerException n) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -126,15 +131,18 @@ public class InventoryController implements Initializable {
                 inventoryValidator.validateInventory(inventory);
                 try {
                     inventoryService.edit(inventory);
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Inventory Edited", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Item Edited", ButtonType.OK);
                     alert.show();
                     resetForm();
-                    log.info("Inventory Edited : " + inventory);
+                    log.info("Item Edited : " + inventory);
                 } catch (Exception e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Editing Process Failed");
                     alert.show();
                     log.error("Error in inventoryService.edit: ", e);
                 }
+            } catch (NullPointerException nullPointerException) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please Fill All Fields", ButtonType.OK);
+                alert.show();
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
                 alert.show();
@@ -152,15 +160,15 @@ public class InventoryController implements Initializable {
 
                 inventoryValidator.validateInventory(inventory);
                 try {
-                    inventoryService.remove(Integer.parseInt(branchId.getText()),Integer.parseInt(productId.getText()));
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Inventory Edited", ButtonType.OK);
+                    inventoryService.remove(Integer.parseInt(branchId.getText()), Integer.parseInt(productId.getText()));
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, "Item Deleted", ButtonType.OK);
                     alert.show();
                     resetForm();
-                    log.info("inventory Edited : " + inventory);
+                    log.info("Item Deleted : " + inventory);
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Editing Process Failed");
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Deleting Process Failed");
                     alert.show();
-                    log.error("Error in inventoryService.edit: ", e);
+                    log.error("Error in inventoryService.remove: ", e);
                 }
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
@@ -178,10 +186,12 @@ public class InventoryController implements Initializable {
         product.clear();
         quantity.clear();
         branch.clear();
+        branchId.clear();
+        productId.clear();
         try {
             refreshTable(inventoryService.findAll());
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "No Inventory Found", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Nothing Found", ButtonType.OK);
             alert.show();
             log.error(e);
         }
@@ -206,39 +216,27 @@ public class InventoryController implements Initializable {
                 product.setText(inventory.getProduct().getName());
                 quantity.setText(String.valueOf(inventory.getQuantity()));
                 branch.setText(inventory.getStoreBranch().getBranchName());
+                productId.setText(String.valueOf(inventory.getProduct().getId()));
+                branchId.setText(String.valueOf(inventory.getStoreBranch().getId()));
             }
         });
     }
 
     public void fillProductField(Product selectedProduct) {
-        System.out.println(selectedProduct);
-        System.out.println(selectedProduct.getName());
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
             if (product != null) {
-                product.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("product is null!");
+                product.setText(selectedProduct.getName());
+                productId.setText(String.valueOf(selectedProduct.getId()));
             }
         });
-        product.setText(selectedProduct.getName());
-        productId.setText(String.valueOf(selectedProduct.getId()));
     }
 
     public void fillBranchField(StoreBranch selectedBranch) {
-        System.out.println(selectedBranch);
-        System.out.println(selectedBranch.getBranchName());
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
-            if (product != null) {
-                product.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("Store Branch is null!");
+            if (branch != null) {
+                branch.setText(selectedBranch.getBranchName());
+                branchId.setText(String.valueOf(selectedBranch.getId()));
             }
         });
-        product.setText(selectedBranch.getBranchName());
-        productId.setText(String.valueOf(selectedBranch.getId()));
     }
 }

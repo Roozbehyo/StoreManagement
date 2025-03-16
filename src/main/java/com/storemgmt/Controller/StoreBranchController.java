@@ -17,9 +17,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import lombok.extern.log4j.Log4j;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -57,7 +57,7 @@ public class StoreBranchController implements Initializable {
     private final BranchSellerValidator branchSellerValidator = new BranchSellerValidator();
     private final StoreBranchService storeBranchService = new StoreBranchService();
     private final BranchSellerService branchSellerService = new BranchSellerService();
-    private FormViewer formViewer;
+    private final FormViewer formViewer = new FormViewer();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -70,6 +70,7 @@ public class StoreBranchController implements Initializable {
         }
         if (FormViewer.branchFormState.equals(FormState.Update)) {
             showSellersBtn.setDisable(true);
+            deleteSellerBtn.setDisable(true);
             saveBtn.setDisable(true);
             deleteBtn.setDisable(true);
             fillFieldsByMouseClick();
@@ -82,7 +83,7 @@ public class StoreBranchController implements Initializable {
             saveSellerBtn.setDisable(true);
             updateSellerBtn.setDisable(true);
             fillFieldsByMouseClick();
-            log.info("Update Mode");
+            log.info("Remove Mode");
         }
         log.info("View initialized");
         resetForm();
@@ -91,7 +92,6 @@ public class StoreBranchController implements Initializable {
             try {
                 StoreBranch storeBranch = StoreBranch
                         .builder()
-                        .id(Integer.parseInt(branchId.getText()))
                         .branchName(branch.getText())
                         .build();
                 try {
@@ -155,7 +155,7 @@ public class StoreBranchController implements Initializable {
 
         showSellersBtn.setOnAction(event -> {
             try {
-                hiddenBranchId = branchId;
+                hiddenBranchId.setText(branchId.getText());
                 showAndLoadSellers();
                 log.info("Showing BranchSeller Section");
             } catch (Exception e) {
@@ -178,10 +178,11 @@ public class StoreBranchController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION,
                             "New Seller Added To This Branch", ButtonType.OK);
                     alert.show();
-                    resetForm();
+                    resetBranchSellerForm();
                     log.info("seller Saved : " + branchSeller);
                 } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Adding Seller Failed", ButtonType.OK);
+                    Alert alert = new Alert(Alert.AlertType.ERROR,
+                            "Adding Seller Failed\n" + e.getMessage(), ButtonType.OK);
                     alert.show();
                     log.error("branchSellerService.save: " + e);
                 }
@@ -208,7 +209,7 @@ public class StoreBranchController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION,
                             "Seller Edited", ButtonType.OK);
                     alert.show();
-                    resetForm();
+                    resetBranchSellerForm();
                     log.info("storeBranch Edited : " + branchSeller);
                 } catch (Exception e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR,
@@ -233,7 +234,7 @@ public class StoreBranchController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION,
                         "Seller Deleted", ButtonType.OK);
                 alert.show();
-                resetForm();
+                resetBranchSellerForm();
                 log.info("Seller Deleted ,Id: " + sellerId.getText());
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Deleting Process Failed");
@@ -245,15 +246,23 @@ public class StoreBranchController implements Initializable {
         addSellerBtn.setOnAction(event -> {
             try {
                 formViewer.showForm("sellerModal", "Seller");
-                SellerModalController sellerModalController = new SellerModalController();
+                SellerModalController sellerModalController =
+                        (SellerModalController) FormViewer.getLastLoadedController();
                 sellerModalController.setViewFormType(ViewFormType.Store_Branch);
-                sellerModalController.loadSellerData();
+                sellerModalController.setStoreBranchController(this);
             } catch (Exception e) {
                 log.error(e);
             }
         });
 
         refreshBtn.setOnAction(event -> {
+            branchSellerPane.setVisible(false);
+            mainPane.setPrefHeight(338);
+            mainPane.setLayoutX(0);
+            mainPane.setLayoutY(0);
+            mainPane.requestLayout();
+            Stage stage = (Stage) mainPane.getScene().getWindow();
+            stage.sizeToScene();
             resetForm();
         });
 
@@ -310,24 +319,24 @@ public class StoreBranchController implements Initializable {
     }
 
     public void fillSellerField(Seller selectedSeller) {
-        System.out.println(selectedSeller);
-        System.out.println(selectedSeller.getFirstname().concat(selectedSeller.getLastname()));
-        System.out.println("Trying to set text...");
         Platform.runLater(() -> {
             if (sellerTxt != null) {
-                sellerTxt.setText("Test Value");
-                System.out.println("Text Set Successfully!");
-            } else {
-                System.out.println("Seller is null!");
+                sellerTxt.setText(selectedSeller.getFirstname().concat(" " + selectedSeller.getLastname()));
+                sellerId.setText(String.valueOf(selectedSeller.getId()));
             }
         });
-        sellerTxt.setText(selectedSeller.getFirstname().concat(selectedSeller.getLastname()));
-        sellerId.setText(String.valueOf(selectedSeller.getId()));
     }
 
     private void showAndLoadSellers() {
         branchSellerPane.setVisible(true);
+        branchSellerPane.setLayoutX(-2);
+        branchSellerPane.setLayoutY(335);
         mainPane.setPrefHeight(669);
+        mainPane.setLayoutX(0);
+        mainPane.setLayoutY(0);
+        mainPane.requestLayout();
+        Stage stage = (Stage) mainPane.getScene().getWindow();
+        stage.sizeToScene();
         resetBranchSellerForm();
     }
 
@@ -335,11 +344,12 @@ public class StoreBranchController implements Initializable {
         sellerId.clear();
         sellerTxt.clear();
         try {
-            refreshBranchSellerTable(branchSellerService.findAllByStoreBranchId(Integer.valueOf((branchId.getText()))));
+            refreshBranchSellerTable(branchSellerService.findAllByStoreBranchId(Integer.valueOf((hiddenBranchId.getText()))));
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "No Seller Found", ButtonType.OK);
             alert.show();
             log.error(e);
+            branchSellerTable.getItems().clear();
         }
     }
 
