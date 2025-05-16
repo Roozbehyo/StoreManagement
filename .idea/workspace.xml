@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="Debugging OrderController, OrderItemController, InventoryController plus Modals">
+      <change afterPath="$PROJECT_DIR$/common-lib/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Enum/Sex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desktop-app/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/desktop-app/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/BranchModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/BranchModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/CustomerModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/CustomerModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/FormViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/FormViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/OrderItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/OrderItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/ProductModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/ProductModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/SellerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/SellerModalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/SellerModalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Controller/StoreBranchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/Controller/StoreBranchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/java/com/storemgmt/desktop/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Db/ConnectionProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/DatabaseMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Db/DatabaseMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Db/storeDb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Db/storeDb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/BranchSeller.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/BranchSeller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/FormState.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Enum/FormState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/Sex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Enum/ViewFormType.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Enum/ViewFormType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Entity/StoreBranch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Entity/StoreBranch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/BranchSellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/BranchSellerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/InventoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/OrderItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/SellerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Repo/StoreBranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Repo/StoreBranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/BranchSellerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/BranchSellerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/OrderItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/SellerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/SellerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Service/StoreBranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Service/StoreBranchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/BranchSellerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/BranchSellerValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/CustomerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/CustomerValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/InventoryValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/InventoryValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/OrderItemValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/OrderItemValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/OrderValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/OrderValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/ProductValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/ProductValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/storemgmt/Model/Validation/SellerValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/storemgmt/common/Validation/SellerValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/customerModalView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/customerModalView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/customerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/customerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/inventoryView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/inventoryView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/loginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/loginView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/mainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/mainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/orderItemView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/orderItemView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/orderView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/orderView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/productModalView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/productModalView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/productView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/productView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/sellerModalView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/sellerModalView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/sellerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/sellerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/storeBranchModalView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/storeBranchModalView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/temps/storeBranchView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/desktop-app/src/main/resources/com/storemgmt/desktop/temps/storeBranchView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DataCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/test/java/DataCreator.java" afterDir="false" />
+    </list>
+    <list id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="NotYet" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="AnnotationType" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="package-info" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Roozbehyo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Roozbehyo/StoreManagement&quot;,
+    &quot;accountId&quot;: &quot;10ab2fca-e23b-4eda-92e0-55b77b6a1d21&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2tmdvfxtgqs90Ia5mc4xb9YrDEa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DataCreator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QueryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StoreBranchTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean,test,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install-file].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [org.apache.maven.plugins:maven-install-plugin:2.4:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.StoreManagement [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common-lib [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.common-lib [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/Java/Store-Management/StoreManagement/desktop-app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45057473&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;Oracle&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;OracleSqlPlus&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.storemgmt.Model.Service" />
+      <recent name="com.storemgmt.Model.Entity.Enum" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\resources\temps" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\common-lib\src\main\java" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\common-lib\src\main\java\com\storemgmt\common" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\desktop-app\src\main\resources\com\storemgmt\desktop\" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\desktop-app\src\main\resources\com\storemgmt\desktop" />
+      <recent name="D:\projects\Java\Store-Management\StoreManagement\src\main\java\com\storemgmt\Model\Db" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.storemgmt.desktopapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.storemgmt.Controller" />
+      <recent name="com.storemgmt.Model.Entity.Enum" />
+      <recent name="com.storemgmt.Model.Validation" />
+      <recent name="com.storemgmt.Model.Service" />
+      <recent name="com.storemgmt.Model.Repo" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn compile" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.MainApp">
+    <configuration name="DataCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="java.DataCreator" />
+      <module name="common-lib" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.storemgmt.desktop.MainApp" />
+      <module name="desktop-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.storemgmt.desktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="web-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.storemgmt.webapp.WebAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DataCreator" />
+      <item itemvalue="Application.MainApp" />
+      <item itemvalue="Spring Boot.WebAppApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApp" />
+        <item itemvalue="Application.DataCreator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f75e8a8-1f38-4847-8d22-25d4df069ba1" name="Changes" comment="" />
+      <changelist id="49c6379e-a19a-42ae-9582-0c59bc6a673a" name="Dont" comment="" />
+      <created>1740961424738</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740961424738</updated>
+      <workItem from="1740961425622" duration="253000" />
+      <workItem from="1740986974817" duration="3447000" />
+      <workItem from="1741008678881" duration="3055000" />
+      <workItem from="1741037930346" duration="2600000" />
+      <workItem from="1741082291745" duration="14818000" />
+      <workItem from="1741200662030" duration="2537000" />
+      <workItem from="1741271745489" duration="4660000" />
+      <workItem from="1741331648253" duration="25503000" />
+      <workItem from="1741392793726" duration="9233000" />
+      <workItem from="1741468974652" duration="382000" />
+      <workItem from="1741515237166" duration="412000" />
+      <workItem from="1741535668244" duration="962000" />
+      <workItem from="1741605776677" duration="39234000" />
+      <workItem from="1741675101358" duration="15403000" />
+      <workItem from="1741717847253" duration="9149000" />
+      <workItem from="1741808200931" duration="2499000" />
+      <workItem from="1741851070211" duration="32810000" />
+      <workItem from="1741933588988" duration="37837000" />
+      <workItem from="1742021392124" duration="30183000" />
+      <workItem from="1742062215990" duration="12476000" />
+      <workItem from="1742104961663" duration="26918000" />
+      <workItem from="1746735655754" duration="2199000" />
+      <workItem from="1746785930715" duration="1490000" />
+      <workItem from="1746864431510" duration="416000" />
+      <workItem from="1746904743200" duration="1297000" />
+      <workItem from="1746952404389" duration="4822000" />
+      <workItem from="1747069220889" duration="1449000" />
+      <workItem from="1747138045948" duration="8033000" />
+      <workItem from="1747213518413" duration="6111000" />
+      <workItem from="1747249352203" duration="17695000" />
+      <workItem from="1747384717820" duration="17503000" />
+      <workItem from="1747433424673" duration="2246000" />
+    </task>
+    <task id="LOCAL-00001" summary="initialize">
+      <option name="closed" value="true" />
+      <created>1741010383727</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741010383727</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Db file added">
+      <option name="closed" value="true" />
+      <created>1741093381089</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741093381089</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Db file updated add config and layers">
+      <option name="closed" value="true" />
+      <created>1741102792552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741102792552</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Db file updated add config and layers">
+      <option name="closed" value="true" />
+      <created>1741102913357</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741102913357</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix problems">
+      <option name="closed" value="true" />
+      <created>1741104399432</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741104399432</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update db">
+      <option name="closed" value="true" />
+      <created>1741278875918</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741278875918</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Db , enum , entity , repo">
+      <option name="closed" value="true" />
+      <created>1741423993054</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741423993054</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Service Layer, Update Repositories, Edit Db, BranchSeller added">
+      <option name="closed" value="true" />
+      <created>1741650152163</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741650152163</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Validation Layer">
+      <option name="closed" value="true" />
+      <created>1741698175891</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741698175891</updated>
+    </task>
+    <task id="LOCAL-00010" summary="InventoryRepository and InventoryService updated">
+      <option name="closed" value="true" />
+      <created>1741857650262</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741857650262</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Validations Updated">
+      <option name="closed" value="true" />
+      <created>1741884883120</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1741884883120</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Some View Forms Made">
+      <option name="closed" value="true" />
+      <created>1741892561633</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741892561633</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Some View Forms Made: Order,OrderItem">
+      <option name="closed" value="true" />
+      <created>1741990477719</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741990477719</updated>
+    </task>
+    <task id="LOCAL-00014" summary="OrderController updated">
+      <option name="closed" value="true" />
+      <created>1741995582948</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741995582948</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update The Others, Add InventoryView">
+      <option name="closed" value="true" />
+      <created>1742020273083</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742020273083</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Change Version From 17 To 1.8 And Fix Bugs">
+      <option name="closed" value="true" />
+      <created>1742021075365</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1742021075365</updated>
+    </task>
+    <task id="LOCAL-00017" summary="pom and log4j.properties">
+      <option name="closed" value="true" />
+      <created>1742023514126</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1742023514126</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add jansi For log4j Logging">
+      <option name="closed" value="true" />
+      <created>1742025903754</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1742025903754</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fix log4j.properties">
+      <option name="closed" value="true" />
+      <created>1742026358042</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1742026358042</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add faker for DataCreator.java,add ojdbc">
+      <option name="closed" value="true" />
+      <created>1742028037377</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1742028037377</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Debug Login,Main,Customer,Seller,Product">
+      <option name="closed" value="true" />
+      <created>1742038752889</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1742038752889</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add Branch And Update OrderController">
+      <option name="closed" value="true" />
+      <created>1742056798190</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1742056798190</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Update BranchModalController">
+      <option name="closed" value="true" />
+      <created>1742056882000</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1742056882000</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Update ViewForms">
+      <option name="closed" value="true" />
+      <created>1742083807637</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1742083807637</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initialize" />
+    <MESSAGE value="Db file added" />
+    <MESSAGE value="Db file updated add config and layers" />
+    <MESSAGE value="fix problems" />
+    <MESSAGE value="update db" />
+    <MESSAGE value="Db , enum , entity , repo" />
+    <MESSAGE value="Service Layer, Update Repositories, Edit Db, BranchSeller added" />
+    <MESSAGE value="Validation Layer" />
+    <MESSAGE value="InventoryRepository and InventoryService updated" />
+    <MESSAGE value="Validations Updated" />
+    <MESSAGE value="Some View Forms Made" />
+    <MESSAGE value="Some View Forms Made: Order,OrderItem" />
+    <MESSAGE value="OrderController updated" />
+    <MESSAGE value="Update The Others, Add InventoryView" />
+    <MESSAGE value="Change Version From 17 To 1.8 And Fix Bugs" />
+    <MESSAGE value="pom and log4j.properties" />
+    <MESSAGE value="Add jansi For log4j Logging" />
+    <MESSAGE value="Fix log4j.properties" />
+    <MESSAGE value="add faker for DataCreator.java,add ojdbc" />
+    <MESSAGE value="Debug Login,Main,Customer,Seller,Product" />
+    <MESSAGE value="Add Branch And Update OrderController" />
+    <MESSAGE value="Update BranchModalController" />
+    <MESSAGE value="Update ViewForms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ViewForms" />
+  </component>
+</project>
